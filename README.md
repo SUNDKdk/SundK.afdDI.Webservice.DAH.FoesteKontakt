@@ -1,2 +1,6 @@
-# https-github.com-RKKPdk-RKKP.afdDI.Webservice.DAH
-Data specifikations for DAH
+# Dataspecifikationerne v0.9.0
+I dette repository ligger der 3 filer.  
+  
+Hackolade filen  
+JSON dokumentation  
+HTML dokumentation  
