@@ -35,15 +35,45 @@
                             "name": "PainEvaluation",
                             "hackoladeMeta": {},
                             "isActivated": true,
-                            "properties": [],
+                            "properties": [
+                                {
+                                    "name": "ResultCode",
+                                    "hackoladeMeta": {},
+                                    "isActivated": true,
+                                    "childType": "ResultCode",
+                                    "type": "string",
+                                    "GUID": "e17cfdfb-b657-41a6-8fb0-e9290f298d59",
+                                    "enum": [
+                                        {
+                                            "GUID": "cc972a94-9740-4c72-b123-539b5ec5fb11",
+                                            "Udfald": "VAS"
+                                        },
+                                        {
+                                            "GUID": "6fb6b428-d6a6-4c27-af0d-c296b1ea2650",
+                                            "Udfald": "NRS"
+                                        },
+                                        {
+                                            "GUID": "1b564105-32aa-4113-b238-0f1b264373d0",
+                                            "Udfald": "VRS"
+                                        },
+                                        {
+                                            "GUID": "724981d6-881e-4038-879c-acb05171cf3c",
+                                            "Udfald": "Andet"
+                                        }
+                                    ],
+                                    "description": "Note: Bruges ved anden type af smertescore (ResultCode)",
+                                    "error": {}
+                                }
+                            ],
                             "rkkpClassCode": {
                                 "activ_rkkpClassCode": false,
                                 "value_rkkpClassCode": "",
                                 "GUID": "3e2429dc-4367-4dce-80ba-200051917436"
                             },
                             "rkkpResCode": {
-                                "activ_rkkpResCode": false,
-                                "GUID": "4955a2a7-fe44-47b7-b5db-990940b4491f"
+                                "activ_rkkpResCode": true,
+                                "GUID": "4955a2a7-fe44-47b7-b5db-990940b4491f",
+                                "optional_rkkpResCode": false
                             },
                             "rkkpResValue": {
                                 "activ_rkkpResValue": true,
@@ -59,7 +89,8 @@
                             },
                             "rkkpNote": {
                                 "activ_rkkpNote": true,
-                                "GUID": "9174dec3-1200-4dfe-9641-a01c0cafbaec"
+                                "GUID": "9174dec3-1200-4dfe-9641-a01c0cafbaec",
+                                "optional_rkkpNote": true
                             },
                             "childType": "Observation",
                             "type": "document",
@@ -121,7 +152,19 @@
                             "name": "SystolicBloodPressure",
                             "hackoladeMeta": {},
                             "isActivated": true,
-                            "properties": [],
+                            "properties": [
+                                {
+                                    "name": "ResultValue",
+                                    "hackoladeMeta": {},
+                                    "isActivated": true,
+                                    "numType": "int",
+                                    "childType": "ResultValue",
+                                    "type": "numeric",
+                                    "GUID": "cc391974-580c-4e6a-b538-5a2a1d7ef223",
+                                    "minValue": 0,
+                                    "error": {}
+                                }
+                            ],
                             "rkkpClassCode": {
                                 "activ_rkkpClassCode": false,
                                 "value_rkkpClassCode": "",
@@ -309,7 +352,10 @@
                                     ],
                                     "code": "Triage",
                                     "description": "R = Red\nO = Orange\nY = Yellow\nG = Green\nB = Blue",
-                                    "error": {}
+                                    "error": {
+                                        "name": false,
+                                        "code": false
+                                    }
                                 }
                             ],
                             "rkkpClassCode": {
@@ -405,7 +451,19 @@
                             "name": "RespiratoryRate",
                             "hackoladeMeta": {},
                             "isActivated": true,
-                            "properties": [],
+                            "properties": [
+                                {
+                                    "name": "ResultValue",
+                                    "hackoladeMeta": {},
+                                    "isActivated": true,
+                                    "numType": "int",
+                                    "childType": "ResultValue",
+                                    "type": "numeric",
+                                    "GUID": "c683b39c-1724-4af0-a4ac-fc367b034168",
+                                    "minValue": 0,
+                                    "error": {}
+                                }
+                            ],
                             "rkkpClassCode": {
                                 "activ_rkkpClassCode": false,
                                 "value_rkkpClassCode": "",
@@ -442,7 +500,19 @@
                             "name": "Temperature",
                             "hackoladeMeta": {},
                             "isActivated": true,
-                            "properties": [],
+                            "properties": [
+                                {
+                                    "name": "ResultValue",
+                                    "hackoladeMeta": {},
+                                    "isActivated": true,
+                                    "numType": "int",
+                                    "childType": "ResultValue",
+                                    "type": "numeric",
+                                    "GUID": "40cbd3d2-2814-402c-9e10-7af41dfce866",
+                                    "minValue": 0,
+                                    "error": {}
+                                }
+                            ],
                             "rkkpClassCode": {
                                 "activ_rkkpClassCode": false,
                                 "value_rkkpClassCode": "",
@@ -479,7 +549,19 @@
                             "name": "PulseRate",
                             "hackoladeMeta": {},
                             "isActivated": true,
-                            "properties": [],
+                            "properties": [
+                                {
+                                    "name": "ResultValue",
+                                    "hackoladeMeta": {},
+                                    "isActivated": true,
+                                    "numType": "int",
+                                    "childType": "ResultValue",
+                                    "type": "numeric",
+                                    "GUID": "36c2391d-6822-43a2-bba6-875f6419c2bc",
+                                    "minValue": 0,
+                                    "error": {}
+                                }
+                            ],
                             "rkkpClassCode": {
                                 "activ_rkkpClassCode": false,
                                 "value_rkkpClassCode": "",
@@ -551,7 +633,7 @@
                             "childType": "Contact",
                             "type": "document",
                             "GUID": "20913ec5-c079-4706-958b-74ac9b4f2bf4",
-                            "name": "DoctorsNote",
+                            "name": "NoteType",
                             "optional": true,
                             "error": {}
                         }
@@ -616,23 +698,25 @@
         "f591215b-960f-4f9d-9263-9613b577d37d": "Contacts",
         "12a5e029-14ab-41e1-9757-145016696779": "Diagnosis",
         "17f74ea6-64e2-49bc-9f74-d237d212ca37": "DAH v0.0.1",
-        "652016de-d9e4-4e1b-a2f8-ee200e5f2835": "PainEvaluation",
-        "9d2d8eb7-ce0a-4845-ae4b-dcacd1f8435b": "OxygenSaturation",
-        "2f3675de-5c88-49f8-832d-c35ea10bf2eb": "ResultValue",
-        "11b91e55-abe8-4329-b663-554399fd3953": "GlascowComaScale",
         "3991a47e-ed5c-4874-8551-543877fb3bd4": "DAH",
-        "66175611-a488-4e6c-b467-2e39141dbd13": "AVPUScale",
-        "8fcccd89-e548-4229-84fb-c8f24e0c23ee": "ResultCode",
         "c5d6eb05-b61f-4d83-9520-39ff9178cacc": "Triage",
-        "0d5fcdbc-8fe5-4d54-a6c2-54e5c64ca027": "ResultCode",
         "0d9f7eec-a1c5-4428-ab58-0bf2a6a33e38": "OxygenDemand",
         "1cf4c2e9-fa57-4bbf-bb47-57691673cbe1": "ResultCode",
         "7c54fcb1-9eba-42f1-a2f8-41a3bfff2d4e": "Temperature",
         "3d3c960b-0d07-42a3-8c93-386e79154a50": "RespiratoryRate",
-        "9924d95a-ccd2-4b0d-be9d-fb4f9a139c30": "ResultValue",
         "7a349cb6-2fd9-4e78-87eb-4ec3184e0f5a": "PulseRate",
         "9d19b322-1bd3-474b-a39a-31d0634ddffd": "SystolicBloodPressure",
-        "20913ec5-c079-4706-958b-74ac9b4f2bf4": "DoctorsNote"
+        "20913ec5-c079-4706-958b-74ac9b4f2bf4": "NoteType",
+        "652016de-d9e4-4e1b-a2f8-ee200e5f2835": "PainEvaluation",
+        "e17cfdfb-b657-41a6-8fb0-e9290f298d59": "ResultCode",
+        "9d2d8eb7-ce0a-4845-ae4b-dcacd1f8435b": "OxygenSaturation",
+        "11b91e55-abe8-4329-b663-554399fd3953": "GlascowComaScale",
+        "66175611-a488-4e6c-b467-2e39141dbd13": "AVPUScale",
+        "0d5fcdbc-8fe5-4d54-a6c2-54e5c64ca027": "ResultCode",
+        "cc391974-580c-4e6a-b538-5a2a1d7ef223": "ResultValue",
+        "c683b39c-1724-4af0-a4ac-fc367b034168": "ResultValue",
+        "40cbd3d2-2814-402c-9e10-7af41dfce866": "ResultValue",
+        "36c2391d-6822-43a2-bba6-875f6419c2bc": "ResultValue"
     },
     "definitions": {
         "type": "definitions",
@@ -663,14 +747,14 @@
         },
         "customPropertiesUpdated": true
     },
-    "lastModifTS": "2023-07-05T13:25:09.267Z",
+    "lastModifTS": "2023-08-17T14:04:40.279Z",
     "persistenceSchemaVersion": "6",
     "isCreatedByPlugin": true,
     "pluginInformation": {
         "pluginEngineVersion": "1.0.0"
     },
     "applicationInformation": {
-        "version": "6.9.10"
+        "version": "6.9.6"
     },
     "settings": {
         "centralPane": {
