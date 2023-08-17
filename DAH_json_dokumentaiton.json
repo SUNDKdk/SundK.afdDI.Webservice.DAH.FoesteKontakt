@@ -15,7 +15,31 @@
             "type": "object",
             "properties": {
                 "PainEvaluation": {
-                    "type": "object"
+                    "type": "object",
+                    "properties": {
+                        "ResultCode": {
+                            "type": "string",
+                            "description": "Note: Bruges ved anden type af smertescore (ResultCode)",
+                            "enum": [
+                                {
+                                    "id": "cc972a94-9740-4c72-b123-539b5ec5fb11",
+                                    "Udfald": "VAS"
+                                },
+                                {
+                                    "id": "6fb6b428-d6a6-4c27-af0d-c296b1ea2650",
+                                    "Udfald": "NRS"
+                                },
+                                {
+                                    "id": "1b564105-32aa-4113-b238-0f1b264373d0",
+                                    "Udfald": "VRS"
+                                },
+                                {
+                                    "id": "724981d6-881e-4038-879c-acb05171cf3c",
+                                    "Udfald": "Andet"
+                                }
+                            ]
+                        }
+                    }
                 },
                 "OxygenSaturation": {
                     "type": "object",
@@ -28,7 +52,12 @@
                     }
                 },
                 "SystolicBloodPressure": {
-                    "type": "object"
+                    "type": "object",
+                    "properties": {
+                        "ResultValue": {
+                            "type": "number"
+                        }
+                    }
                 },
                 "GlascowComaScale": {
                     "type": "object",
@@ -120,15 +149,30 @@
                 },
                 "RespiratoryRate": {
                     "type": "object",
-                    "description": "First respiratory rate"
+                    "description": "First respiratory rate",
+                    "properties": {
+                        "ResultValue": {
+                            "type": "number"
+                        }
+                    }
                 },
                 "Temperature": {
                     "type": "object",
-                    "description": "First temperature"
+                    "description": "First temperature",
+                    "properties": {
+                        "ResultValue": {
+                            "type": "number"
+                        }
+                    }
                 },
                 "PulseRate": {
                     "type": "object",
-                    "description": "First pulse rate"
+                    "description": "First pulse rate",
+                    "properties": {
+                        "ResultValue": {
+                            "type": "number"
+                        }
+                    }
                 }
             },
             "additionalProperties": false
@@ -136,7 +180,7 @@
         "Contacts": {
             "type": "object",
             "properties": {
-                "DoctorsNote": {
+                "NoteType": {
                     "type": "object"
                 }
             }
