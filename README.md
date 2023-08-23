@@ -1,6 +1,6 @@
-# Dataspecifikationerne v0.9.0
-I dette repository ligger der 3 filer.  
-  
-Hackolade filen  
-JSON dokumentation  
-HTML dokumentation  
+# Data specifikationer v1.0.0
+I dette repository ligger der vores hackolade model og dokumentation på følgende typer: 
+* JSON
+* HTML
+* Markdown
+* PDF

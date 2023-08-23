@@ -2,7 +2,7 @@
     "modelName": "DAH WSAPI",
     "collections": [
         {
-            "collectionName": "DAH v0.0.1",
+            "collectionName": "DAH",
             "type": "object",
             "properties": [
                 {
@@ -664,9 +664,8 @@
             "additionalProperties": false,
             "GUID": "17f74ea6-64e2-49bc-9f74-d237d212ca37",
             "bucketId": "3991a47e-ed5c-4874-8551-543877fb3bd4",
-            "hackoladeMeta": {
-                "validationErrors": {}
-            }
+            "hackoladeMeta": {},
+            "skemaversion": "1.0.0"
         }
     ],
     "buckets": [
@@ -697,7 +696,7 @@
         "c28f4842-6075-4b91-be89-17540d8001cc": "Observations",
         "f591215b-960f-4f9d-9263-9613b577d37d": "Contacts",
         "12a5e029-14ab-41e1-9757-145016696779": "Diagnosis",
-        "17f74ea6-64e2-49bc-9f74-d237d212ca37": "DAH v0.0.1",
+        "17f74ea6-64e2-49bc-9f74-d237d212ca37": "DAH",
         "3991a47e-ed5c-4874-8551-543877fb3bd4": "DAH",
         "c5d6eb05-b61f-4d83-9520-39ff9178cacc": "Triage",
         "0d9f7eec-a1c5-4428-ab58-0bf2a6a33e38": "OxygenDemand",
@@ -747,14 +746,14 @@
         },
         "customPropertiesUpdated": true
     },
-    "lastModifTS": "2023-08-17T14:04:40.279Z",
+    "lastModifTS": "2023-08-23T10:11:30.135Z",
     "persistenceSchemaVersion": "6",
     "isCreatedByPlugin": true,
     "pluginInformation": {
         "pluginEngineVersion": "1.0.0"
     },
     "applicationInformation": {
-        "version": "6.9.6"
+        "version": "6.9.10"
     },
     "settings": {
         "centralPane": {
