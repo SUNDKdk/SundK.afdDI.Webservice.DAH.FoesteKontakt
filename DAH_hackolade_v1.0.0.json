@@ -651,7 +651,7 @@
                             "GUID": "20913ec5-c079-4706-958b-74ac9b4f2bf4",
                             "name": "NoteType",
                             "optional": true,
-                            "description": "Dato for foerste afsluttet laegenotat samt notattype (angives i elementet \"Note\")",
+                            "description": "Dato for første afsluttet lægenotat samt notattype (angives i elementet 'Note')",
                             "error": {}
                         }
                     ],
@@ -764,7 +764,7 @@
         },
         "customPropertiesUpdated": true
     },
-    "lastModifTS": "2023-09-05T12:01:12.163Z",
+    "lastModifTS": "2023-09-05T12:24:33.823Z",
     "persistenceSchemaVersion": "6",
     "isCreatedByPlugin": true,
     "pluginInformation": {
