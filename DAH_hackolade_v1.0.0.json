@@ -73,7 +73,7 @@
                                     "type": "numeric",
                                     "GUID": "bcdc8afd-e8f0-47be-8469-9cd8540f68fb",
                                     "minValue": 0,
-                                    "description": "Vaerdi for smertescore",
+                                    "description": "Værdi for smertescore",
                                     "error": {}
                                 }
                             ],
@@ -108,7 +108,7 @@
                             "type": "document",
                             "GUID": "652016de-d9e4-4e1b-a2f8-ee200e5f2835",
                             "optional": true,
-                            "description": "Foerste smertemaaling.\nDer angives type og dato.\nHvis der angives \"Andet\" i type, er det muligt at indsende yderligere information i \"Note\" elementet.",
+                            "description": "Første smertemåling.\nHvis der angives 'Andet' i type, er det muligt at indsende yderligere information i 'Note' elementet.",
                             "error": {}
                         },
                         {
@@ -125,10 +125,12 @@
                                     "GUID": "2f3675de-5c88-49f8-832d-c35ea10bf2eb",
                                     "minValue": 0,
                                     "maxValue": 100,
-                                    "code": "OXYSAT",
-                                    "description": "Unit = %",
+                                    "description": "Enhed = %",
                                     "numType": "float",
-                                    "error": {}
+                                    "error": {
+                                        "name": false,
+                                        "code": false
+                                    }
                                 }
                             ],
                             "rkkpClassCode": {
@@ -160,7 +162,7 @@
                             "type": "document",
                             "GUID": "9d2d8eb7-ce0a-4845-ae4b-dcacd1f8435b",
                             "optional": true,
-                            "description": "Foerste iltmaetningsmaaling.\nDer angives vaerdi og dato.",
+                            "description": "Første iltmætningsmåling.",
                             "error": {}
                         },
                         {
@@ -209,7 +211,7 @@
                             "type": "document",
                             "GUID": "9d19b322-1bd3-474b-a39a-31d0634ddffd",
                             "optional": true,
-                            "description": "Blodtryksmaaling (stystolisk).\nDer angives dato og vaerdi.",
+                            "description": "Blodtryksmåling (stystolisk).",
                             "error": {}
                         },
                         {
@@ -226,7 +228,6 @@
                                     "GUID": "9924d95a-ccd2-4b0d-be9d-fb4f9a139c30",
                                     "minValue": 3,
                                     "maxValue": 15,
-                                    "code": "GCS",
                                     "numType": "int",
                                     "error": {
                                         "name": false,
@@ -263,7 +264,7 @@
                             "type": "document",
                             "GUID": "11b91e55-abe8-4329-b663-554399fd3953",
                             "optional": true,
-                            "description": "Foerste Glascow Coma Scale maaling.\nDer angives dato og vaerdi.",
+                            "description": "Første Glascow Coma Scale måling.",
                             "error": {}
                         },
                         {
@@ -296,9 +297,11 @@
                                             "Udfald": "U"
                                         }
                                     ],
-                                    "code": "AVPU",
                                     "description": "A = Alert, \nV = Verbal, \nP = Pain, \nU = Unresponsive",
-                                    "error": {}
+                                    "error": {
+                                        "name": false,
+                                        "code": false
+                                    }
                                 }
                             ],
                             "rkkpClassCode": {
@@ -330,7 +333,7 @@
                             "type": "document",
                             "GUID": "66175611-a488-4e6c-b467-2e39141dbd13",
                             "optional": true,
-                            "description": "Foerste AVPU skala (bevidsthed).\nDer angives vaerdi og dato.",
+                            "description": "Første AVPU skala (bevidsthed).",
                             "error": {}
                         },
                         {
@@ -367,9 +370,11 @@
                                             "Udfald": "B"
                                         }
                                     ],
-                                    "code": "Triage",
                                     "description": "R = Red, \nO = Orange, \nY = Yellow, \nG = Green, \nB = Blue",
-                                    "error": {}
+                                    "error": {
+                                        "name": false,
+                                        "code": false
+                                    }
                                 }
                             ],
                             "rkkpClassCode": {
@@ -401,7 +406,7 @@
                             "type": "document",
                             "GUID": "c5d6eb05-b61f-4d83-9520-39ff9178cacc",
                             "optional": true,
-                            "description": "Foerste Triage kategorisering.\nDer angives vaerdi og dato.",
+                            "description": "Første Triage kategorisering.",
                             "error": {}
                         },
                         {
@@ -416,7 +421,6 @@
                                     "childType": "ResultCode",
                                     "type": "string",
                                     "GUID": "1cf4c2e9-fa57-4bbf-bb47-57691673cbe1",
-                                    "code": "OXYDEM",
                                     "enum": [
                                         {
                                             "GUID": "f9cd161c-e6cf-47e8-8acd-c133cb7b5790",
@@ -428,7 +432,10 @@
                                         }
                                     ],
                                     "description": "Y = Yes,\nN = No",
-                                    "error": {}
+                                    "error": {
+                                        "name": false,
+                                        "code": false
+                                    }
                                 }
                             ],
                             "rkkpClassCode": {
@@ -460,7 +467,7 @@
                             "type": "document",
                             "GUID": "0d9f7eec-a1c5-4428-ab58-0bf2a6a33e38",
                             "optional": true,
-                            "description": "Foerste iltbehov.\nDer angives vaerdi og dato.",
+                            "description": "Første iltbehov.",
                             "error": {}
                         },
                         {
@@ -508,7 +515,7 @@
                             "childType": "Observation",
                             "type": "document",
                             "GUID": "3d3c960b-0d07-42a3-8c93-386e79154a50",
-                            "description": "Foerste respirationsfrekvens maaling.\nDer angives vaerdi og dato.",
+                            "description": "Første respirationsfrekvens måling.",
                             "optional": true,
                             "error": {}
                         },
@@ -526,6 +533,7 @@
                                     "type": "numeric",
                                     "GUID": "40cbd3d2-2814-402c-9e10-7af41dfce866",
                                     "minValue": 0,
+                                    "description": "Enhed = grader",
                                     "error": {}
                                 }
                             ],
@@ -557,7 +565,7 @@
                             "childType": "Observation",
                             "type": "document",
                             "GUID": "7c54fcb1-9eba-42f1-a2f8-41a3bfff2d4e",
-                            "description": "Foerste temperatur maaling.\nDer angives vaerdi og dato.",
+                            "description": "Første temperatur måling.",
                             "optional": true,
                             "error": {}
                         },
@@ -606,7 +614,7 @@
                             "childType": "Observation",
                             "type": "document",
                             "GUID": "7a349cb6-2fd9-4e78-87eb-4ec3184e0f5a",
-                            "description": "Foerste pulsmaaling.\nDer angives vaerdi og dato.",
+                            "description": "Første pulsmåling.",
                             "optional": true,
                             "error": {}
                         }
@@ -722,18 +730,17 @@
         "7a349cb6-2fd9-4e78-87eb-4ec3184e0f5a": "PulseRate",
         "9d19b322-1bd3-474b-a39a-31d0634ddffd": "SystolicBloodPressure",
         "20913ec5-c079-4706-958b-74ac9b4f2bf4": "NoteType",
-        "9d2d8eb7-ce0a-4845-ae4b-dcacd1f8435b": "OxygenSaturation",
-        "66175611-a488-4e6c-b467-2e39141dbd13": "AVPUScale",
         "c683b39c-1724-4af0-a4ac-fc367b034168": "ResultValue",
         "36c2391d-6822-43a2-bba6-875f6419c2bc": "ResultValue",
         "652016de-d9e4-4e1b-a2f8-ee200e5f2835": "PainEvaluation",
         "e17cfdfb-b657-41a6-8fb0-e9290f298d59": "ResultCode",
         "bcdc8afd-e8f0-47be-8469-9cd8540f68fb": "ResultValue",
-        "2f3675de-5c88-49f8-832d-c35ea10bf2eb": "ResultValue",
         "cc391974-580c-4e6a-b538-5a2a1d7ef223": "ResultValue",
         "40cbd3d2-2814-402c-9e10-7af41dfce866": "ResultValue",
+        "c5d6eb05-b61f-4d83-9520-39ff9178cacc": "Triage",
+        "9d2d8eb7-ce0a-4845-ae4b-dcacd1f8435b": "OxygenSaturation",
         "11b91e55-abe8-4329-b663-554399fd3953": "GlascowComaScale",
-        "c5d6eb05-b61f-4d83-9520-39ff9178cacc": "Triage"
+        "66175611-a488-4e6c-b467-2e39141dbd13": "AVPUScale"
     },
     "definitions": {
         "type": "definitions",
@@ -764,7 +771,7 @@
         },
         "customPropertiesUpdated": true
     },
-    "lastModifTS": "2023-09-05T12:24:33.823Z",
+    "lastModifTS": "2023-09-05T12:46:16.927Z",
     "persistenceSchemaVersion": "6",
     "isCreatedByPlugin": true,
     "pluginInformation": {
