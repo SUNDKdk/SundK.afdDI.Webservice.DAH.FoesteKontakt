@@ -63,6 +63,18 @@
                                     ],
                                     "description": "Note: Bruges ved anden type af smertescore (ResultCode)",
                                     "error": {}
+                                },
+                                {
+                                    "name": "ResultValue",
+                                    "hackoladeMeta": {},
+                                    "isActivated": true,
+                                    "numType": "float",
+                                    "childType": "ResultValue",
+                                    "type": "numeric",
+                                    "GUID": "bcdc8afd-e8f0-47be-8469-9cd8540f68fb",
+                                    "minValue": 0,
+                                    "description": "Vaerdi for smertescore",
+                                    "error": {}
                                 }
                             ],
                             "rkkpClassCode": {
@@ -96,7 +108,7 @@
                             "type": "document",
                             "GUID": "652016de-d9e4-4e1b-a2f8-ee200e5f2835",
                             "optional": true,
-                            "description": "Første smertemåling.\nDer angives type og dato.\nHvis der angives \"Andet\" i type, er det muligt at indsende yderligere information i \"Note\" elementet.",
+                            "description": "Foerste smertemaaling.\nDer angives type og dato.\nHvis der angives \"Andet\" i type, er det muligt at indsende yderligere information i \"Note\" elementet.",
                             "error": {}
                         },
                         {
@@ -115,6 +127,7 @@
                                     "maxValue": 100,
                                     "code": "OXYSAT",
                                     "description": "Unit = %",
+                                    "numType": "float",
                                     "error": {}
                                 }
                             ],
@@ -147,7 +160,7 @@
                             "type": "document",
                             "GUID": "9d2d8eb7-ce0a-4845-ae4b-dcacd1f8435b",
                             "optional": true,
-                            "description": "Første iltmætningsmåling.\nDer angives værdi og dato.",
+                            "description": "Foerste iltmaetningsmaaling.\nDer angives vaerdi og dato.",
                             "error": {}
                         },
                         {
@@ -196,7 +209,7 @@
                             "type": "document",
                             "GUID": "9d19b322-1bd3-474b-a39a-31d0634ddffd",
                             "optional": true,
-                            "description": "Blodtryksmåling (stystolisk).\nDer angives dato og værdi.",
+                            "description": "Blodtryksmaaling (stystolisk).\nDer angives dato og vaerdi.",
                             "error": {}
                         },
                         {
@@ -214,6 +227,7 @@
                                     "minValue": 3,
                                     "maxValue": 15,
                                     "code": "GCS",
+                                    "numType": "int",
                                     "error": {
                                         "name": false,
                                         "code": false
@@ -249,7 +263,7 @@
                             "type": "document",
                             "GUID": "11b91e55-abe8-4329-b663-554399fd3953",
                             "optional": true,
-                            "description": "Første Glascow Coma Scale måling.\nDer angives dato og værdi.",
+                            "description": "Foerste Glascow Coma Scale maaling.\nDer angives dato og vaerdi.",
                             "error": {}
                         },
                         {
@@ -316,7 +330,7 @@
                             "type": "document",
                             "GUID": "66175611-a488-4e6c-b467-2e39141dbd13",
                             "optional": true,
-                            "description": "Første AVPU skala (bevidsthed).\nDer angives værdi og dato.",
+                            "description": "Foerste AVPU skala (bevidsthed).\nDer angives vaerdi og dato.",
                             "error": {}
                         },
                         {
@@ -387,7 +401,7 @@
                             "type": "document",
                             "GUID": "c5d6eb05-b61f-4d83-9520-39ff9178cacc",
                             "optional": true,
-                            "description": "Første Triage kategorisering.\nDer angives værdi og dato.",
+                            "description": "Foerste Triage kategorisering.\nDer angives vaerdi og dato.",
                             "error": {}
                         },
                         {
@@ -413,7 +427,7 @@
                                             "Udfald": "N"
                                         }
                                     ],
-                                    "description": "Y = Yes\nN = No",
+                                    "description": "Y = Yes,\nN = No",
                                     "error": {}
                                 }
                             ],
@@ -446,7 +460,7 @@
                             "type": "document",
                             "GUID": "0d9f7eec-a1c5-4428-ab58-0bf2a6a33e38",
                             "optional": true,
-                            "description": "Første iltbehov.\nDer angives værdi og dato.",
+                            "description": "Foerste iltbehov.\nDer angives vaerdi og dato.",
                             "error": {}
                         },
                         {
@@ -494,7 +508,7 @@
                             "childType": "Observation",
                             "type": "document",
                             "GUID": "3d3c960b-0d07-42a3-8c93-386e79154a50",
-                            "description": "Første respirationsfrekvens måling.\nDer angives værdi og dato.",
+                            "description": "Foerste respirationsfrekvens maaling.\nDer angives vaerdi og dato.",
                             "optional": true,
                             "error": {}
                         },
@@ -507,7 +521,7 @@
                                     "name": "ResultValue",
                                     "hackoladeMeta": {},
                                     "isActivated": true,
-                                    "numType": "int",
+                                    "numType": "float",
                                     "childType": "ResultValue",
                                     "type": "numeric",
                                     "GUID": "40cbd3d2-2814-402c-9e10-7af41dfce866",
@@ -543,7 +557,7 @@
                             "childType": "Observation",
                             "type": "document",
                             "GUID": "7c54fcb1-9eba-42f1-a2f8-41a3bfff2d4e",
-                            "description": "Første temperatur måling.\nDer angives værdi og dato.",
+                            "description": "Foerste temperatur maaling.\nDer angives vaerdi og dato.",
                             "optional": true,
                             "error": {}
                         },
@@ -592,7 +606,7 @@
                             "childType": "Observation",
                             "type": "document",
                             "GUID": "7a349cb6-2fd9-4e78-87eb-4ec3184e0f5a",
-                            "description": "Første pulsmåling.\nDer angives værdi og dato.",
+                            "description": "Foerste pulsmaaling.\nDer angives vaerdi og dato.",
                             "optional": true,
                             "error": {}
                         }
@@ -637,7 +651,7 @@
                             "GUID": "20913ec5-c079-4706-958b-74ac9b4f2bf4",
                             "name": "NoteType",
                             "optional": true,
-                            "description": "Dato for første afsluttet lægenotat samt notattype (angives i elementet \"Note\")",
+                            "description": "Dato for foerste afsluttet laegenotat samt notattype (angives i elementet \"Note\")",
                             "error": {}
                         }
                     ],
@@ -708,16 +722,17 @@
         "7a349cb6-2fd9-4e78-87eb-4ec3184e0f5a": "PulseRate",
         "9d19b322-1bd3-474b-a39a-31d0634ddffd": "SystolicBloodPressure",
         "20913ec5-c079-4706-958b-74ac9b4f2bf4": "NoteType",
-        "652016de-d9e4-4e1b-a2f8-ee200e5f2835": "PainEvaluation",
-        "e17cfdfb-b657-41a6-8fb0-e9290f298d59": "ResultCode",
         "9d2d8eb7-ce0a-4845-ae4b-dcacd1f8435b": "OxygenSaturation",
         "66175611-a488-4e6c-b467-2e39141dbd13": "AVPUScale",
-        "cc391974-580c-4e6a-b538-5a2a1d7ef223": "ResultValue",
         "c683b39c-1724-4af0-a4ac-fc367b034168": "ResultValue",
-        "40cbd3d2-2814-402c-9e10-7af41dfce866": "ResultValue",
         "36c2391d-6822-43a2-bba6-875f6419c2bc": "ResultValue",
+        "652016de-d9e4-4e1b-a2f8-ee200e5f2835": "PainEvaluation",
+        "e17cfdfb-b657-41a6-8fb0-e9290f298d59": "ResultCode",
+        "bcdc8afd-e8f0-47be-8469-9cd8540f68fb": "ResultValue",
+        "2f3675de-5c88-49f8-832d-c35ea10bf2eb": "ResultValue",
+        "cc391974-580c-4e6a-b538-5a2a1d7ef223": "ResultValue",
+        "40cbd3d2-2814-402c-9e10-7af41dfce866": "ResultValue",
         "11b91e55-abe8-4329-b663-554399fd3953": "GlascowComaScale",
-        "9924d95a-ccd2-4b0d-be9d-fb4f9a139c30": "ResultValue",
         "c5d6eb05-b61f-4d83-9520-39ff9178cacc": "Triage"
     },
     "definitions": {
@@ -749,7 +764,7 @@
         },
         "customPropertiesUpdated": true
     },
-    "lastModifTS": "2023-09-05T10:26:05.320Z",
+    "lastModifTS": "2023-09-05T12:01:12.163Z",
     "persistenceSchemaVersion": "6",
     "isCreatedByPlugin": true,
     "pluginInformation": {
