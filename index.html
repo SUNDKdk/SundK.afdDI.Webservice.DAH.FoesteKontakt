@@ -8,19 +8,47 @@
     <header>
         <h1>DAH Webservices</h1>
         <nav>
-            <a href="#">Hjemmeside (soon)</a>
-            <a href="/redoc">Redocs</a>
+            <a href="https://github.com/RKKPdk/RKKP.afdDI.Webservice.DAH">Github</a>
+            <a href="https://rkkp-wsapi.test.tcs.trifork.cloud/redoc#tag/DAH">Redocs</a>
         </nav>
     </header>
     <main>
         <section class="hero">
             <div class="hero-content">
-                <h2>RKKP dokumentation</h2>
+                <h2>RKKP DAH dokumentation</h2>
                 <ul>
                     <li>DAH v1.0.0</li>
-                    <li>DHREG v1.0.1</li>
                 </ul>
             </div>
+        </section>
+        <section>
+            <table>
+                <tr>
+                    <th>Field name</th>
+                    <th>Field description</th>
+                    <th>Udfald</th>
+                    <th>Required</th>
+                </tr>
+                <tr>
+                    <td>PainEvaluation</td>
+                    <td>Første smertemåling. Hvis der angives 'Andet' i type, er det muligt at indsende yderligere information i 'Note' elementet.</td>
+                    <td></td>
+                    <td>❌</td>
+                </tr>
+                <tr>
+                    <td>ResultCode</td>
+                    <td>Note: Bruges ved anden type af smertescore (ResultCode)</td>
+                    <td>VAS / NRS / VRS / Andet</td>
+                    <td>❌</td>
+                </tr>
+                <tr>
+                    <td>OxygenSaturation</td>
+                    <td>Første smertemåling. Hvis der angives 'Andet' i type, er det muligt at indsende yderligere information i 'Note' elementet.</td>
+                    <td></td>
+                    <td>❌</td>
+                </tr>
+
+            </table>
         </section>
     </main>
     <footer>
