@@ -228,6 +228,7 @@ footer img {
 table, th, td {
 	border: 1px solid black;
 	border-collapse: collapse;
+	width: 500px;
   }
   th, td {
 	padding: 7px;
@@ -244,3 +245,23 @@ table, th, td {
 	border: 1px solid #ddd; /* Add a grey border */
 	margin-bottom: 12px; /* Add some space below the input */
   }
+
+  
+  .tooltip .tooltiptext {
+	visibility: hidden;
+	width: 350px;
+	background-color: black;
+	color: #fff;
+	text-align: center;
+	border-radius: 6px;
+	padding: 5px -10;
+  
+	/* Position the tooltip */
+	position: absolute;
+	z-index: 1;
+  }
+  
+  .tooltip:hover .tooltiptext {
+	visibility: visible;
+  }
+
