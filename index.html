@@ -21,35 +21,181 @@
                 </ul>
             </div>
         </section>
-        <section>
-            <table>
-                <tr>
-                    <th>Field name</th>
-                    <th>Field description</th>
-                    <th>Udfald</th>
-                    <th>Required</th>
-                </tr>
-                <tr>
-                    <td>PainEvaluation</td>
-                    <td>Første smertemåling. Hvis der angives 'Andet' i type, er det muligt at indsende yderligere information i 'Note' elementet.</td>
-                    <td></td>
-                    <td>❌</td>
-                </tr>
-                <tr>
-                    <td>ResultCode</td>
-                    <td>Note: Bruges ved anden type af smertescore (ResultCode)</td>
-                    <td>VAS / NRS / VRS / Andet</td>
-                    <td>❌</td>
-                </tr>
-                <tr>
-                    <td>OxygenSaturation</td>
-                    <td>Første smertemåling. Hvis der angives 'Andet' i type, er det muligt at indsende yderligere information i 'Note' elementet.</td>
-                    <td></td>
-                    <td>❌</td>
-                </tr>
+        <br><br>
 
-            </table>
+        <section>
+
+
+
+            <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names..">
+            <!-- Tab links -->
+            <div class="tab">
+                <button class="tablinks" onclick="change_tab(event, 'Observationer')" id="defaultOpen">Observationer</button>
+                <button class="tablinks" onclick="change_tab(event, 'Diagnoser')">Diagnoser</button>
+                <button class="tablinks" onclick="change_tab(event, 'Kontakter')">Kontakter</button>
+            </div>
+      
+
+            <!-- Tab content -->
+            <div id="Observationer" class="tabcontent">
+                <br>
+                <table id="myTable">
+                    <tr>
+                        <th align="left">Variabel navn</th>
+                        <th align="left">Beskrivelse</th>
+                        <th align="left">Udfald</th>
+                        <th align="left">Påkrævet</th>
+                    </tr>
+                    <tr>
+                        <td>PainEvaluation</td>
+                        <td>Første smertemåling. Hvis der angives 'Andet' i type, er det muligt at indsende yderligere information i 'Note' elementet.</td>
+                        <td></td>
+                        <td align="center">❌</td>
+                    </tr>
+                    <tr>
+                        <td>PainEvaluation ->
+                            ResultCode</td>
+                        <td>Note: Bruges ved anden type af smertescore (ResultCode)</td>
+                        <td align="left">
+    
+                                <li>VAS</li>
+                                <li>NRS</li>
+                                <li>VRS</li>
+                                <li>Andet</li>
+                            
+                        <td align="center">❌</td>
+                    </tr>
+                    <tr>
+                        <td>PainEvaluation ->
+                            Dato</td>
+                        <td>1970-01-01 00:00</td>
+                        <td align="left"></td>
+                        <td align="center">❌</td>
+                    </tr>
+                    <tr>
+                        <td>OxygenSaturation</td>
+                        <td>Første smertemåling. Hvis der angives 'Andet' i type, er det muligt at indsende yderligere information i 'Note' elementet.</td>
+                        <td></td>
+                        <td align="center">❌</td>
+                    </tr>
+                    <tr>
+                        <td>OxygenSaturation
+                            Dato
+                        </td>
+                        <td>1970-01-01 00:00</td>
+                        <td></td>
+                        <td align="center">❌</td>
+                    </tr>
+    
+                </table>           
+            </div>
+            
+            <div id="Diagnoser" class="tabcontent">
+                <br>
+                <table id="myTable2">
+                    <tr>
+                        <th>Field name</th>
+                        <th>Field description</th>
+                        <th>Udfald</th>
+                        <th>Required</th>
+                    </tr>
+                    <tr>
+                        <td>ABC</td>
+                        <td>Første smertemåling. Hvis der angives 'Andet' i type, er det muligt at indsende yderligere information i 'Note' elementet.</td>
+                        <td></td>
+                        <td>❌</td>
+                    </tr>
+                    <tr>
+                        <td>DDD</td>
+                        <td>Note: Bruges ved anden type af smertescore (ResultCode)</td>
+                        <td>VAS / NRS / VRS / Andet</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr>
+                        <td>OxygenSaturation</td>
+                        <td>Første smertemåling. Hvis der angives 'Andet' i type, er det muligt at indsende yderligere information i 'Note' elementet.</td>
+                        <td></td>
+                        <td>❌</td>
+                    </tr>
+    
+                </table> 
+            </div>
+            
+            <div id="Kontakter" class="tabcontent">
+                <br>
+                <table>
+                    <tr>
+                        <th>Field name</th>
+                        <th>Field description</th>
+                        <th>Udfald</th>
+                        <th>Required</th>
+                    </tr>
+                    <tr>
+                        <td>ccc</td>
+                        <td>Første smertemåling. Hvis der angives 'Andet' i type, er det muligt at indsende yderligere information i 'Note' elementet.</td>
+                        <td></td>
+                        <td>❌</td>
+                    </tr>
+                    <tr>
+                        <td>ResultCode</td>
+                        <td>Note: Bruges ved anden type af smertescore (ResultCode)</td>
+                        <td>VAS / NRS / VRS / Andet</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr>
+                        <td>OxygenSaturation</td>
+                        <td>Første smertemåling. Hvis der angives 'Andet' i type, er det muligt at indsende yderligere information i 'Note' elementet.</td>
+                        <td></td>
+                        <td>❌</td>
+                    </tr>
+    
+                </table> 
+            </div>
+
+            <script>
+                function change_tab(evt, tab_name) {
+                  var i, tabcontent, tablinks;
+                  tabcontent = document.getElementsByClassName("tabcontent");
+                  for (i = 0; i < tabcontent.length; i++) {
+                    tabcontent[i].style.display = "none";
+                  }
+                  tablinks = document.getElementsByClassName("tablinks");
+                  for (i = 0; i < tablinks.length; i++) {
+                    tablinks[i].className = tablinks[i].className.replace(" active", "");
+                  }
+                  document.getElementById(tab_name).style.display = "block";
+                  evt.currentTarget.className += " active";
+                }
+
+                // Get the element with id="defaultOpen" and click on it
+                document.getElementById("defaultOpen").click();
+
+                
+                function myFunction() {
+                    // Declare variables
+                    var input, filter, table, tr, td, i, txtValue;
+                    input = document.getElementById("myInput");
+                    filter = input.value.toUpperCase();
+                    table = document.getElementById("myTable");
+                    tr = table.getElementsByTagName("tr");
+
+                // Loop through all table rows, and hide those who don't match the search query
+                for (i = 0; i < tr.length; i++) {
+                    td = tr[i].getElementsByTagName("td")[0];
+                    if (td) {
+                    txtValue = td.textContent || td.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                    }
+                }
+                }
+                </script>
+
         </section>
+
     </main>
     <footer>
     </footer>
