@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>RKKP Webservice</title>
-    <link href='style.css' rel="stylesheet">
+    <link href='style3.css' rel="stylesheet">
 </head>
 <body>
     <header>
@@ -15,7 +15,7 @@
     <main>
         <section class="hero">
             <div class="hero-content">
-                <h2>RKKP DAH dokumentation</h2>
+                <h2>INDEX 3</h2>
                 <ul>
                     <li>DAH v1.0.0</li>
                 </ul>
@@ -33,13 +33,14 @@
                 <button class="tablinks" onclick="change_tab(event, 'Observationer')" id="defaultOpen">Observationer</button>
                 <button class="tablinks" onclick="change_tab(event, 'Diagnoser')">Diagnoser</button>
             </div>
-            
+      
+
             <!-- Tab content -->
             <div id="Observationer" class="tabcontent">
                 <br>
                 <table id="myTable">
                     <tr>
-                        <th></th>
+                        <th>Variabel navn</th>
                         <th></th>
                         <th align="center">Required</th>
                     </tr>
@@ -48,53 +49,30 @@
                         <td></td>
                         <td align="center">✖</td>
                     </tr>
-            
-                    <tr class="PainEvaluation" style="display: none;">
-                        <td>Object information</td>
-                        <td colspan="2">
-                            <table class="sub-table">
-                                <tr>
-                                    <th></th>
-                                    <th></th>
-                                    <th align="center">Required</th>
-                                </tr>
-                                <tr>
-                                    <td>ResultCode</td>
-                                    <td>
-                                        <li>VAS</li>
-                                        <li>NRS</li>
-                                        <li>VRS</li>
-                                        <li>Andet</li>  
-                                    </td>
-                                    <td align="center">✔</td>
-                                </tr>
-                                <tr>
-                                    <td>Date</td>
-                                    <td></td>
-                                    <td align="center">✔</td>
-                                </tr>
-                                <!-- Add more sub-table rows if needed -->
-                            </table>
-                        </td>
 
-                    </tr>
-            
                     <tr class="PainEvaluation" style="display: none;">
+                        <td class="tooltip">ResultCode &#x1F6C8;<span class="tooltiptext"> Note: Bruges ved anden type af smertescore (ResultCode)</span></td>
+                        <td>
+                                <li>VAS</li>
+                                <li>NRS</li>
+                                <li>VRS</li>
+                                <li>Andet</li>  
+                        <td align="center">✔</td>
+                    </tr>
+
+                    <tr class="PainEvaluation"  style="display: none;">
                         <td>Dato</td>
                         <td></td>
                         <td align="center">✔</td>
                     </tr>
-
-
                     <tr title="OxygenSaturation">
                         <td class="tooltip" onclick="toggle_children_info('OxygenSaturation')">+ OxygenSaturation &#x1F6C8; <span class="tooltiptext">Første smertemåling. Hvis der angives 'Andet' i type, er det muligt at indsende yderligere information i 'Note' elementet</span></td>
                         <td></td>
                         <td align="center">✖</td>
                     </tr>
 
-
                     <tr class="OxygenSaturation" style="display: none;">
-                        <td>ResultValue</td>
+                        <td>Resultvalue</td>
                         <td>0-100%</td>
                         <td align="center">✔</td>
                     </tr>
@@ -104,9 +82,8 @@
                         <td>1970-01-01 00:00</td>
                         <td align="center">✔</td>
                     </tr>
-
     
-                </table>
+                </table>           
             </div>
             
             <div id="Diagnoser" class="tabcontent">
@@ -124,8 +101,20 @@
                         <td></td>
                         <td>❌</td>
                     </tr>
-                    <!-- Add more top-level table rows for Diagnoser if needed -->
-                </table>
+                    <tr>
+                        <td>DDD</td>
+                        <td>Note: Bruges ved anden type af smertescore (ResultCode)</td>
+                        <td>VAS / NRS / VRS / Andet</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr>
+                        <td>OxygenSaturation</td>
+                        <td>Første smertemåling. Hvis der angives 'Andet' i type, er det muligt at indsende yderligere information i 'Note' elementet.</td>
+                        <td></td>
+                        <td>❌</td>
+                    </tr>
+    
+                </table> 
             </div>
             
 

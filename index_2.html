@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>RKKP Webservice</title>
+    <link href='style.css' rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+    <header>
+        <h1>DAH Webservices</h1>
+        <nav>
+            <a href="https://github.com/RKKPdk/RKKP.afdDI.Webservice.DAH">Github</a>
+            <a href="https://rkkp-wsapi.test.tcs.trifork.cloud/redoc#tag/DAH">Redocs</a>
+        </nav>
+    </header>
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h2>Index 2</h2>
+                <ul>
+                    <li>DAH v1.0.0</li>
+                </ul>
+            </div>
+        </section>
+        <br><br>
+
+        <section>
+
+
+
+            <input type="text" id="myInput" onkeyup="search_table()" placeholder="Search for names..">
+            <!-- Tab links -->
+            <div class="tab">
+                <button class="tablinks" onclick="change_tab(event, 'Observationer')" id="defaultOpen">Observationer</button>
+                <button class="tablinks" onclick="change_tab(event, 'Diagnoser')">Diagnoser</button>
+            </div>
+      
+
+            <!-- Tab content -->
+            <div id="Observationer" class="tabcontent">
+                <br>
+
+                </table>     
+                
+                <table class="table table-hover table-dark" id="myTable">
+                    <thead>
+                      <tr>
+                        <th scope="col">Variabel navn</th>
+                        <th scope="col"></th>
+                        <th scope="col" align="center">Required</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr title="PainEvaluation">
+                            <td scope="row" onclick="toggle_children_info('PainEvaluation')" title="Første smertemåling. Hvis der angives 'Andet' i type, er det muligt at indsende yderligere information i 'Note' elementet">+ PainEvaluation &#x1F6C8; </td>
+                            <td align="center"></td>
+                            <td align="center">❌</td>
+                        </tr>
+    
+                        <tr class="PainEvaluation" style="display: none;">
+                            <td title="Note: Bruges ved anden type af smertescore (ResultCode)">ResultCode &#x1F6C8; </td>
+                            <td>
+                                    <li>VAS</li>
+                                    <li>NRS</li>
+                                    <li>VRS</li>
+                                    <li>Andet</li>  
+                            <td align="center">✔</td>
+                        </tr>
+
+                        <tr class="PainEvaluation" style="display: none;">
+                            <td title="Værdi for smertescore">ResultValue  &#x1F6C8;</td>
+                            <td>>=0</td>
+                            <td align="center">✔</td>
+                        </tr>
+    
+                        <tr class="PainEvaluation" style="display: none;">
+                            <td>Dato</td>
+                            <td>2023-09-07T20:21:49</td>
+                            <td align="center">✔</td>
+                        </tr>
+
+                        <tr class="PainEvaluation" style="display: none;">
+                            <td>Note</td>
+                            <td></td>
+                            <td align="center">❌</td>
+                        </tr>
+
+                        <tr title="OxygenSaturation">
+                            <td onclick="toggle_children_info('OxygenSaturation')" title="Første smertemåling. Hvis der angives 'Andet' i type, er det muligt at indsende yderligere information i 'Note' elementet">+ OxygenSaturation &#x1F6C8;</td>
+                            <td></td>
+                            <td align="center">❌</td>
+                        </tr>
+    
+                        <tr class="OxygenSaturation" style="display: none;">
+                            <td>ResultValue</td>
+                            <td>0-100%</td>
+                            <td align="center">✔</td>
+                        </tr>
+    
+                        <tr class="OxygenSaturation" style="display: none;">
+                            <td>Dato</td>
+                            <td>1970-01-01 00:00</td>
+                            <td align="center">✔</td>
+                        </tr>
+
+                    </tbody>
+                  </table>
+
+            </div>
+            
+
+            </div>
+            
+
+            
+            <script>
+                function change_tab(evt, tab_name) {
+                  var i, tabcontent, tablinks;
+                  tabcontent = document.getElementsByClassName("tabcontent");
+                  for (i = 0; i < tabcontent.length; i++) {
+                    tabcontent[i].style.display = "none";
+                  }
+                  tablinks = document.getElementsByClassName("tablinks");
+                  for (i = 0; i < tablinks.length; i++) {
+                    tablinks[i].className = tablinks[i].className.replace(" active", "");
+                  }
+                  document.getElementById(tab_name).style.display = "block";
+                  evt.currentTarget.className += " active";
+                }
+
+                // Get the element with id="defaultOpen" and click on it
+                document.getElementById("defaultOpen").click();
+
+                
+                function search_table() {
+                    // Declare variables
+                    var input, filter, table, tr, i, className, titleValue;
+                    input = document.getElementById("myInput");
+                    filter = input.value.toUpperCase();
+                    table = document.getElementById("myTable");
+                    tr = table.getElementsByTagName("tr");
+
+                    // Loop through all table rows, and hide those who don't match the search query
+                    for (i = 0; i < tr.length; i++) {
+                        className = tr[i].getAttribute("class"); // Access the 'class' attribute of the <tr>
+                        titleValue = tr[i].getAttribute("title"); // Access the 'title' attribute of the <tr>
+
+                        // Convert attribute values to uppercase for case-insensitive comparison
+                        if (className) { className = className.toUpperCase();}
+                        if (titleValue) { titleValue = titleValue.toUpperCase();}
+
+                        // Check if either class or title matches the filter
+                        if (className && className.indexOf(filter) > -1) {
+                            tr[i].style.display = "";
+                        } else if (titleValue && titleValue.indexOf(filter) > -1) {
+                            tr[i].style.display = "";
+                        } else {
+                            tr[i].style.display = "none";
+                        }
+                    }
+                }
+
+
+
+
+                function toggle_children_info(parent_id) {
+                    var parent = document.getElementsByClassName(parent_id);
+                    for (i = 0; i < parent.length; i++) {
+                        if (parent[i].style.display === "none") {
+                            parent[i].style.display = "";
+                        } else {
+                            parent[i].style.display = "none";
+                        }
+                    }
+                }
+
+
+                </script>
+
+        </section>
+
+    </main>
+    <footer>
+    </footer>
+</body>
+</html>

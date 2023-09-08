@@ -265,5 +265,19 @@ table, th, td {
 	visibility: visible;
   }
 
-  
+  .sub-table {
+	margin-left: 20px; /* Indent the sub-table to visually represent hierarchy */
+}
 
+.sub-table th {
+	background-color: #f2f2f2; /* Add a background color to distinguish sub-table headers */
+}
+
+.PainEvaluation {
+	background-color: grey; /* Add a grey background color to rows with class "PainEvaluation" */
+
+	border-inline-color: yellow;
+	border-spacing: 2px;
+	border: thick solid #0000FF;
+
+}
