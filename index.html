@@ -16,7 +16,7 @@
                     <span class="navbar-text" _tf="DAH_v1_0_0 Web Dokumentation"></span>
                     <ul class="navbar-nav ms-3 me-auto">
                         <li class="nav-item ms-3">
-                            <a class="btn btn-info btn-sm" href="https://github.com/RKKPdk/RKKP.afdDI.Webservice.DAH/tree/v1.0.0">
+                            <a class="btn btn-info btn-sm" href="https://github.com/RKKPdk/RKKP.afdDI.Webservice.DAH">
                                 <i class="bi bi-github"></i>
                                  GitHub
                             </a>
@@ -833,7 +833,6 @@ N = No</td>
                     row.classList.remove('hidden-row');
                     row.classList.add('visible-row');
                 });
-                localStorage.setItem('stateAdvView', JSON.stringify(checkboxAdvView.checked));
             } else {
                 visibleCells.forEach(function (cell) {
                     cell.classList.remove('visible-col');
@@ -844,7 +843,6 @@ N = No</td>
                     row.classList.remove('visible-row');
                     row.classList.add('hidden-row');
                 });
-                localStorage.setItem('stateAdvView', JSON.stringify(checkboxAdvView.unchecked));
             }
         }
         
@@ -899,14 +897,12 @@ N = No</td>
                 root.style.setProperty('--colorCourse', colorMeta);
                 root.style.setProperty('--colorDiagnosis', colorMeta);
                 root.style.setProperty('--colorObservation', colorMeta);
-                localStorage.setItem('stateGrayscale', JSON.stringify(checkboxGrayscale.checked));
             } else {
                 root.style.setProperty('--colorActivity', colorActivity);
                 root.style.setProperty('--colorContact', colorContact);
                 root.style.setProperty('--colorCourse', colorCourse);
                 root.style.setProperty('--colorDiagnosis', colorDiagnosis);
                 root.style.setProperty('--colorObservation', colorObservation);
-                localStorage.setItem('stateGrayscale', JSON.stringify(checkboxGrayscale.unchecked));
             }
         }
                                
@@ -931,7 +927,6 @@ N = No</td>
                     if (element.classList.contains("objectBodyMain")) {
                         element.classList.add("objectBodyMainFlatView");
                     }
-                    localStorage.setItem('stateFlatView', JSON.stringify(checkboxFlatView.checked));
                 } else {
                     if (element.classList.contains("objectHeaderMainFlatView")) {
                         element.classList.remove("objectHeaderMainFlatView");
@@ -942,7 +937,6 @@ N = No</td>
                     if (element.classList.contains("objectBodyMainFlatView")) {
                         element.classList.remove("objectBodyMainFlatView");
                     }
-                    localStorage.setItem('stateFlatView', JSON.stringify(checkboxFlatView.unchecked));
                 }
             })
         };
@@ -956,10 +950,8 @@ N = No</td>
         function toggleDarkMode() {
             if (checkboxDarkMode.checked) {
                 document.documentElement.setAttribute('data-bs-theme', 'dark')
-                localStorage.setItem('stateDarkMode', JSON.stringify(checkboxDarkMode.checked));
             } else {
                 document.documentElement.setAttribute('data-bs-theme', 'light')
-                localStorage.setItem('stateDarkMode', JSON.stringify(checkboxDarkMode.unchecked));
             }
         };
     
@@ -1024,41 +1016,6 @@ N = No</td>
 
             hideAdvancedRows() // Hide Rows with class advanced-data
             hideAdvancedColumn(2); // Hide Column 1 (Type)
-
-            // Apply localStorage settings
-
-            const savedAdvView = localStorage.getItem('stateAdvView');
-            if (savedAdvView == "true") {
-                var checkbox = document.getElementById('toggleAdvView');
-                checkbox.checked = JSON.parse(savedAdvView);
-                const event = new Event('change');
-                checkbox.dispatchEvent(event);
-            }
-
-            const savedFlatView = localStorage.getItem('stateFlatView');
-
-            if (savedFlatView == "true") {
-                var checkbox = document.getElementById('toggleFlatView');
-                checkbox.checked = JSON.parse(savedFlatView);
-                const event = new Event('change');
-                checkbox.dispatchEvent(event);
-            }
-
-            const savedDarkMode = localStorage.getItem('stateDarkMode');
-            if (savedDarkMode == "true") {
-                var checkbox = document.getElementById('toggleDarkMode');
-                checkbox.checked = JSON.parse(savedDarkMode);
-                const event = new Event('change');
-                checkbox.dispatchEvent(event);
-            }
-
-            const savedGrayscale = localStorage.getItem('stateGrayscale');
-            if (savedGrayscale == "true") {
-                var checkbox = document.getElementById('toggleGrayscale');
-                checkbox.checked = JSON.parse(savedGrayscale);
-                const event = new Event('change');
-                checkbox.dispatchEvent(event);
-            }
         });
                            
         </script>
