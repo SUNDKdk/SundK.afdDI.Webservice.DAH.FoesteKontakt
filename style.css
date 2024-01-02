@@ -1,5 +1,9 @@
 :root {
+<<<<<<<< HEAD:src/assets/html/style.css
+	--colorReport: 		rgba(136,204,238, 0.4);
+========
 	--colorMeta: 		rgba(136,204,238, 0.4);
+>>>>>>>> dev:output/html/style.css
 	--colorActivity: 	rgba(51,34,136, 0.4);
 	--colorContact: 	rgba(170,68,153, 0.4);
 	--colorCourse: 		rgba(17,119,51, 0.4);
@@ -26,6 +30,14 @@ main {
 
 .required {
 	color: red;
+}
+
+.h2, h2 {
+	font-size: 1.25rem;
+	margin: 1rem;
+    font-weight: 500;
+    line-height: 1.2;
+    color: var(--bs-heading-color);
 }
 
 /* Overwrite Bootstrap Behavior */
@@ -89,6 +101,23 @@ main {
 
 }
 
+<<<<<<<< HEAD:src/assets/html/style.css
+.list-group-item {
+	background-color: transparent !important;
+	padding: 3px;
+	margin: 3px 0px 0px 10px;
+}
+
+.list-group-flush>.list-group-item:last-child {
+    border-bottom-width: var(--bs-border-width);
+}
+
+.list-group-item:first-child {
+    border-top-width: var(--bs-border-width);
+}
+
+========
+>>>>>>>> dev:output/html/style.css
 
 /* Layout */
 
@@ -109,7 +138,11 @@ main {
 }
 
 .th-attribute {
+<<<<<<<< HEAD:src/assets/html/style.css
+	width: 25% !important;
+========
 	width: 10% !important;
+>>>>>>>> dev:output/html/style.css
 }
 
 .th-description {
@@ -121,7 +154,11 @@ main {
 }
 
 .th-value {
+<<<<<<<< HEAD:src/assets/html/style.css
+	width: 15% !important;
+========
 	width: 35% !important;
+>>>>>>>> dev:output/html/style.css
 }
 
 .th-required {
@@ -137,8 +174,6 @@ main {
 
 /* Function Styles */
 
-.advanced-data {}
-
 .hidden-col {
 	visibility: hidden !important;
 	display: none !important;
@@ -148,10 +183,6 @@ main {
 	visibility: hidden !important;
 	display: none !important;
 }
-
-.visible-col {}
-
-.visible-row {}
 
 /* Database Object Style */
 
@@ -200,7 +231,6 @@ main {
 	border-bottom-left-radius: 5px !important;
 	border-bottom-right-radius: 5px !important;
 	margin-top: -1rem !important;
-	padding: 1rem !important
 }
 
 .objectBodyMainFlatView {
@@ -220,27 +250,35 @@ main {
 /* Data Type Colors */
 
 .activity-txt {
-	color: var(--colorActivity);
+	color: var(--colorActivity) !important;
 }
 
-.Meta-txt {
-	color: var(--colorMeta);
+.report-txt {
+	color: var(--colorReport) !important;
 }
 
 .course-txt {
-	color: var(--colorCourse);
+	color: var(--colorCourse) !important;
 }
 
 .contact-txt {
+<<<<<<<< HEAD:src/assets/html/style.css
+	color: var(--colorContact) !important;
+========
 	color: var(--colorContact)  !important;
+>>>>>>>> dev:output/html/style.css
 }
 
 .diagnosis-txt {
-	color: var(--colorDiagnosis);
+	color: var(--colorDiagnosis) !important;
 }
 
 .observation-txt {
-	color: var(--colorObservation);
+	color: var(--colorObservation) !important;
+}
+
+.gray-txt {
+	color: var(--colorGray) !important;
 }
 
 .Gray-txt {
@@ -251,8 +289,8 @@ main {
 	background-color: var(--colorActivity) !important;
 }
 
-#groupMeta .objectHeaderColor {
-	background-color: var(--colorMeta) !important;
+#groupReport .objectHeaderColor {
+	background-color: var(--colorReport) !important;
 }
 
 #groupCourse .objectHeaderColor {
@@ -269,6 +307,10 @@ main {
 
 #groupObservation .objectHeaderColor {
 	background-color: var(--colorObservation) !important;
+}
+
+#groupGray .objectHeaderColor {
+	background-color: var(--colorGray) !important;
 }
 
 .objectHeaderGray {

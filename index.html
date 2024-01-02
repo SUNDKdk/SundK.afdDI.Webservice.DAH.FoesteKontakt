@@ -19,7 +19,7 @@
                     </a>
                     <ul class="navbar-nav ms-3 me-auto">
                         <li class="nav-item ms-3">
-                            <a class="btn btn-info btn-sm" href="https://github.com/RKKPdk">
+                            <a class="btn btn-info btn-sm hidden" href="https://github.com/RKKPdk" id="github-link">
                                 <i class="bi bi-github"></i>
                                  GitHub
                             </a>
@@ -99,14 +99,14 @@
                         <div class="alert alert-tertiary border" style="margin-bottom: 0px !important">
                             <h4>DAH.v1.0.0</h4>
                             <p>
-                                                        This is the documentation for the database queried through the DAH.v1.0.0 endpoint. 
+                                                        This is the documentation for the database queried through the DAH.v1.0.0 endpoint.
                                                          </p>
                             <hr />
                             <p>
                                                         Below you will find an overview of the data objects in the database, as well as their attributes, descriptions of attributes (when available),
                                                         and requirement status. <br> <br>
                                                         In the header you can find tools to customize your view of the documentation such as "Advanced View" which will show you more technical
-                                                        specifications, along with the Table View, Grayscale Mode and Dark Mode. 
+                                                        specifications, along with the Table View, Grayscale Mode and Dark Mode.
                                                         </p>
                         </div>
                     </div>
@@ -122,7 +122,7 @@
                     <div class="col-sm-12">
                         <ul class="nav nav-tabs d-flex">
                             <li class="nav-item">
-                                <button class="nav-link active" id="showAll" type="button" onclick="filterTypes('showAll', this)"><i class="bi bi-square-fill Gray-txt me-2"></i>Show all</button>
+                                <button class="nav-link active" id="showAll" type="button" onclick="filterTypes('showAll', this)"><i class="bi bi-square-fill gray-txt me-2"></i>Show all</button>
                             </li>
                             <li class="nav-item">
                                 <button class="nav-link hidden" id="tabActivity" type="button"><i class="bi bi-square-fill activity-txt me-2"></i>Activities</button>
@@ -140,7 +140,7 @@
                                 <button class="nav-link" id="tabObservation" type="button" onclick="filterTypes('groupObservation', this)"><i class="bi bi-square-fill bg-body-tertiary observation-txt me-2"></i>Observations</button>
                             </li>
                             <li class="nav-item">
-                                <button class="nav-link" id="tabMeta" type="button" onclick="filterTypes('groupMeta', this)"><i class="bi bi-square-fill bg-body-tertiary Meta-txt me-2"></i>Report Objects</button>
+                                <button class="nav-link" id="tabReport" type="button" onclick="filterTypes('groupReport', this)"><i class="bi bi-square-fill bg-body-tertiary report-txt me-2"></i>Report Objects</button>
                             </li>
                             <li class="nav-item ms-auto">
                                 <button data-bs-toggle='modal' data-bs-target='#jsonModal' class="btn btn-info btn-sm">
@@ -159,40 +159,44 @@
                                                 <ol class="breadcrumb objectHeaderMain objectHeaderColor">
                                                     <i class="bi bi-folder2 me-2"></i>
                                                     <li class="breadcrumb-item">DAH</li>
-                                                    <li class="breadcrumb-item">Report</li>
-                                                    <li class="breadcrumb-item">Data</li>
                                                     <li class="breadcrumb-item">Contacts</li>
                                                     <li aria-current='page' class="breadcrumb-item active">NoteType</li>
                                                 </ol>
                                             </a>
                                             <div class="collapse m-3 objectBodyMain" id="NoteType1">
+                                                <p style="height: 1rem !important; margin: 0px !important;"></p>
                                                 <div class="objectDescription bg-body-tertiary">
                                                     Dato for første afsluttet lægenotat samt notattype (angives i elementet 'Note')
                                                 </div>
+                                                <h2>Object: Attributes</h2>
                                                 <table class="table table-bordered table-striped table-hover ">
                                                     <thead>
                                                         <tr>
                                                             <th scope="col" class="fst-italic th-attribute">Attribute</th>
                                                             <th scope="col" class="fst-italic th-description">Description</th>
                                                             <th scope="col" class="fst-italic th-type">Type</th>
-                                                            <th scope="col" class="fst-italic th-value">Accepted Value(s)</th>
+                                                            <th scope="col" class="fst-italic th-value">Constraints</th>
                                                             <th scope="col" class="fst-italic th-required">Required</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody class="table-group-divider">
                                                         <tr>
-                                                            <th scope="row">DateTime</th>
-                                                            <td scope="row"></td>
-                                                            <td scope="row">DateTime</td>
-                                                            <td scope="row"></td>
-                                                            <td scope="row"></td>
-                                                        </tr>
-                                                        <tr>
                                                             <th scope="row">Note</th>
                                                             <td scope="row"></td>
-                                                            <td scope="row">string</td>
+                                                            <td scope="row">str</td>
                                                             <td scope="row"></td>
+                                                            <td scope="row">
+                                                                <span class="required">* Required</span>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="row">DateTime</th>
                                                             <td scope="row"></td>
+                                                            <td scope="row">datetime</td>
+                                                            <td scope="row"></td>
+                                                            <td scope="row">
+                                                                <span class="required">* Required</span>
+                                                            </td>
                                                         </tr>
                                                     </tbody>
                                                 </table>
@@ -203,46 +207,44 @@
                                     <div id="groupDiagnosis" class="groupDiagnosis"></div>
                                     <div id="groupObservation" class="groupObservation">
                                         <div class="dataObject">
-                                            <a data-bs-toggle='collapse' aria-expanded='false' href="#PainEvaluation1" class="ObjectHeaderWrapper">
+                                            <a data-bs-toggle='collapse' aria-expanded='false' href="#AVPUScale1" class="ObjectHeaderWrapper">
                                                 <ol class="breadcrumb objectHeaderMain objectHeaderColor">
                                                     <i class="bi bi-folder2 me-2"></i>
                                                     <li class="breadcrumb-item">DAH</li>
-                                                    <li class="breadcrumb-item">Report</li>
-                                                    <li class="breadcrumb-item">Data</li>
                                                     <li class="breadcrumb-item">Observations</li>
-                                                    <li aria-current='page' class="breadcrumb-item active">PainEvaluation</li>
+                                                    <li aria-current='page' class="breadcrumb-item active">AVPUScale</li>
                                                 </ol>
                                             </a>
-                                            <div class="collapse m-3 objectBodyMain" id="PainEvaluation1">
+                                            <div class="collapse m-3 objectBodyMain" id="AVPUScale1">
+                                                <p style="height: 1rem !important; margin: 0px !important;"></p>
                                                 <div class="objectDescription bg-body-tertiary">
-                                                    Første smertemåling.
-Hvis der angives 'Andet' i type, er det muligt at indsende yderligere information i 'Note' elementet.
+                                                    Første AVPU skala (bevidsthed).
                                                 </div>
+                                                <h2>Object: Attributes</h2>
                                                 <table class="table table-bordered table-striped table-hover ">
                                                     <thead>
                                                         <tr>
                                                             <th scope="col" class="fst-italic th-attribute">Attribute</th>
                                                             <th scope="col" class="fst-italic th-description">Description</th>
                                                             <th scope="col" class="fst-italic th-type">Type</th>
-                                                            <th scope="col" class="fst-italic th-value">Accepted Value(s)</th>
+                                                            <th scope="col" class="fst-italic th-value">Constraints</th>
                                                             <th scope="col" class="fst-italic th-required">Required</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody class="table-group-divider">
                                                         <tr>
                                                             <th scope="row">ResultCode</th>
-                                                            <td scope="row">Note: Bruges ved anden type af smertescore (ResultCode)</td>
-                                                            <td scope="row">string</td>
-                                                            <td scope="row">vas, nrs, vrs, andet</td>
+                                                            <td scope="row">A = Alert, V = Verbal, P = Pain, U = Unresponsive</td>
+                                                            <td scope="row">udfald (str)</td>
                                                             <td scope="row">
-                                                                <span class="required">* Required</span>
+                                                                <p style="margin:0px; font-weight: bold;">Udfald:</p>
+                                                                <ul class="list-group list-group-flush">
+                                                                    <li class="list-group-item">a</li>
+                                                                    <li class="list-group-item">v</li>
+                                                                    <li class="list-group-item">p</li>
+                                                                    <li class="list-group-item">u</li>
+                                                                </ul>
                                                             </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th scope="row">ResultValue</th>
-                                                            <td scope="row">Værdi for smertescore</td>
-                                                            <td scope="row">int</td>
-                                                            <td scope="row">Minimum værdi: 0</td>
                                                             <td scope="row">
                                                                 <span class="required">* Required</span>
                                                             </td>
@@ -250,7 +252,245 @@ Hvis der angives 'Andet' i type, er det muligt at indsende yderligere informatio
                                                         <tr>
                                                             <th scope="row">DateTime</th>
                                                             <td scope="row"></td>
-                                                            <td scope="row">DateTime</td>
+                                                            <td scope="row">datetime</td>
+                                                            <td scope="row"></td>
+                                                            <td scope="row">
+                                                                <span class="required">* Required</span>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <div class="dataObject">
+                                            <a data-bs-toggle='collapse' aria-expanded='false' href="#GlascowComaScale2" class="ObjectHeaderWrapper">
+                                                <ol class="breadcrumb objectHeaderMain objectHeaderColor">
+                                                    <i class="bi bi-folder2 me-2"></i>
+                                                    <li class="breadcrumb-item">DAH</li>
+                                                    <li class="breadcrumb-item">Observations</li>
+                                                    <li aria-current='page' class="breadcrumb-item active">GlascowComaScale</li>
+                                                </ol>
+                                            </a>
+                                            <div class="collapse m-3 objectBodyMain" id="GlascowComaScale2">
+                                                <p style="height: 1rem !important; margin: 0px !important;"></p>
+                                                <div class="objectDescription bg-body-tertiary">
+                                                    Første Glascow Coma Scale måling.
+                                                </div>
+                                                <h2>Object: Attributes</h2>
+                                                <table class="table table-bordered table-striped table-hover ">
+                                                    <thead>
+                                                        <tr>
+                                                            <th scope="col" class="fst-italic th-attribute">Attribute</th>
+                                                            <th scope="col" class="fst-italic th-description">Description</th>
+                                                            <th scope="col" class="fst-italic th-type">Type</th>
+                                                            <th scope="col" class="fst-italic th-value">Constraints</th>
+                                                            <th scope="col" class="fst-italic th-required">Required</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody class="table-group-divider">
+                                                        <tr>
+                                                            <th scope="row">ResultValue</th>
+                                                            <td scope="row"></td>
+                                                            <td scope="row">int</td>
+                                                            <td scope="row">
+                                                                <p style="margin:0px; font-weight: bold;">Min</p>
+                                                                <ul class="list-group list-group-flush">
+                                                                    <li class="list-group-item">3</li>
+                                                                </ul>
+                                                                <p style="margin:0px; font-weight: bold;">Max</p>
+                                                                <ul class="list-group list-group-flush">
+                                                                    <li class="list-group-item">15</li>
+                                                                </ul>
+                                                            </td>
+                                                            <td scope="row">
+                                                                <span class="required">* Required</span>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="row">DateTime</th>
+                                                            <td scope="row"></td>
+                                                            <td scope="row">datetime</td>
+                                                            <td scope="row"></td>
+                                                            <td scope="row">
+                                                                <span class="required">* Required</span>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <div class="dataObject">
+                                            <a data-bs-toggle='collapse' aria-expanded='false' href="#OxygenDemand3" class="ObjectHeaderWrapper">
+                                                <ol class="breadcrumb objectHeaderMain objectHeaderColor">
+                                                    <i class="bi bi-folder2 me-2"></i>
+                                                    <li class="breadcrumb-item">DAH</li>
+                                                    <li class="breadcrumb-item">Observations</li>
+                                                    <li aria-current='page' class="breadcrumb-item active">OxygenDemand</li>
+                                                </ol>
+                                            </a>
+                                            <div class="collapse m-3 objectBodyMain" id="OxygenDemand3">
+                                                <p style="height: 1rem !important; margin: 0px !important;"></p>
+                                                <div class="objectDescription bg-body-tertiary">
+                                                    Første iltbehov.
+                                                </div>
+                                                <h2>Object: Attributes</h2>
+                                                <table class="table table-bordered table-striped table-hover ">
+                                                    <thead>
+                                                        <tr>
+                                                            <th scope="col" class="fst-italic th-attribute">Attribute</th>
+                                                            <th scope="col" class="fst-italic th-description">Description</th>
+                                                            <th scope="col" class="fst-italic th-type">Type</th>
+                                                            <th scope="col" class="fst-italic th-value">Constraints</th>
+                                                            <th scope="col" class="fst-italic th-required">Required</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody class="table-group-divider">
+                                                        <tr>
+                                                            <th scope="row">DateTime</th>
+                                                            <td scope="row"></td>
+                                                            <td scope="row">datetime</td>
+                                                            <td scope="row"></td>
+                                                            <td scope="row">
+                                                                <span class="required">* Required</span>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="row">ResultCode</th>
+                                                            <td scope="row">Y = Yes, N = No</td>
+                                                            <td scope="row">udfald (str)</td>
+                                                            <td scope="row">
+                                                                <p style="margin:0px; font-weight: bold;">Udfald:</p>
+                                                                <ul class="list-group list-group-flush">
+                                                                    <li class="list-group-item">y</li>
+                                                                    <li class="list-group-item">n</li>
+                                                                </ul>
+                                                            </td>
+                                                            <td scope="row">
+                                                                <span class="required">* Required</span>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <div class="dataObject">
+                                            <a data-bs-toggle='collapse' aria-expanded='false' href="#OxygenSaturation4" class="ObjectHeaderWrapper">
+                                                <ol class="breadcrumb objectHeaderMain objectHeaderColor">
+                                                    <i class="bi bi-folder2 me-2"></i>
+                                                    <li class="breadcrumb-item">DAH</li>
+                                                    <li class="breadcrumb-item">Observations</li>
+                                                    <li aria-current='page' class="breadcrumb-item active">OxygenSaturation</li>
+                                                </ol>
+                                            </a>
+                                            <div class="collapse m-3 objectBodyMain" id="OxygenSaturation4">
+                                                <p style="height: 1rem !important; margin: 0px !important;"></p>
+                                                <div class="objectDescription bg-body-tertiary">
+                                                    Første iltmætningsmåling.
+                                                </div>
+                                                <h2>Object: Attributes</h2>
+                                                <table class="table table-bordered table-striped table-hover ">
+                                                    <thead>
+                                                        <tr>
+                                                            <th scope="col" class="fst-italic th-attribute">Attribute</th>
+                                                            <th scope="col" class="fst-italic th-description">Description</th>
+                                                            <th scope="col" class="fst-italic th-type">Type</th>
+                                                            <th scope="col" class="fst-italic th-value">Constraints</th>
+                                                            <th scope="col" class="fst-italic th-required">Required</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody class="table-group-divider">
+                                                        <tr>
+                                                            <th scope="row">DateTime</th>
+                                                            <td scope="row"></td>
+                                                            <td scope="row">datetime</td>
+                                                            <td scope="row"></td>
+                                                            <td scope="row">
+                                                                <span class="required">* Required</span>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="row">ResultValue</th>
+                                                            <td scope="row">Enhed = %</td>
+                                                            <td scope="row">float</td>
+                                                            <td scope="row">
+                                                                <p style="margin:0px; font-weight: bold;">Min</p>
+                                                                <ul class="list-group list-group-flush">
+                                                                    <li class="list-group-item">0</li>
+                                                                </ul>
+                                                                <p style="margin:0px; font-weight: bold;">Max</p>
+                                                                <ul class="list-group list-group-flush">
+                                                                    <li class="list-group-item">100</li>
+                                                                </ul>
+                                                            </td>
+                                                            <td scope="row">
+                                                                <span class="required">* Required</span>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <div class="dataObject">
+                                            <a data-bs-toggle='collapse' aria-expanded='false' href="#PainEvaluation5" class="ObjectHeaderWrapper">
+                                                <ol class="breadcrumb objectHeaderMain objectHeaderColor">
+                                                    <i class="bi bi-folder2 me-2"></i>
+                                                    <li class="breadcrumb-item">DAH</li>
+                                                    <li class="breadcrumb-item">Observations</li>
+                                                    <li aria-current='page' class="breadcrumb-item active">PainEvaluation</li>
+                                                </ol>
+                                            </a>
+                                            <div class="collapse m-3 objectBodyMain" id="PainEvaluation5">
+                                                <p style="height: 1rem !important; margin: 0px !important;"></p>
+                                                <div class="objectDescription bg-body-tertiary">
+                                                    Første smertemåling. Hvis der angives 'Andet' i type, er det muligt at indsende yderligere information i 'Note' elementet.
+                                                </div>
+                                                <h2>Object: Attributes</h2>
+                                                <table class="table table-bordered table-striped table-hover ">
+                                                    <thead>
+                                                        <tr>
+                                                            <th scope="col" class="fst-italic th-attribute">Attribute</th>
+                                                            <th scope="col" class="fst-italic th-description">Description</th>
+                                                            <th scope="col" class="fst-italic th-type">Type</th>
+                                                            <th scope="col" class="fst-italic th-value">Constraints</th>
+                                                            <th scope="col" class="fst-italic th-required">Required</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody class="table-group-divider">
+                                                        <tr>
+                                                            <th scope="row">ResultCode</th>
+                                                            <td scope="row">Note: Bruges ved anden type af smertescore (ResultCode)</td>
+                                                            <td scope="row">udfald (str)</td>
+                                                            <td scope="row">
+                                                                <p style="margin:0px; font-weight: bold;">Udfald:</p>
+                                                                <ul class="list-group list-group-flush">
+                                                                    <li class="list-group-item">vas</li>
+                                                                    <li class="list-group-item">nrs</li>
+                                                                    <li class="list-group-item">vrs</li>
+                                                                    <li class="list-group-item">andet</li>
+                                                                </ul>
+                                                            </td>
+                                                            <td scope="row">
+                                                                <span class="required">* Required</span>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="row">ResultValue</th>
+                                                            <td scope="row">Værdi for smertescore</td>
+                                                            <td scope="row">float</td>
+                                                            <td scope="row">
+                                                                <p style="margin:0px; font-weight: bold;">Min</p>
+                                                                <ul class="list-group list-group-flush">
+                                                                    <li class="list-group-item">0</li>
+                                                                </ul>
+                                                            </td>
+                                                            <td scope="row">
+                                                                <span class="required">* Required</span>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="row">DateTime</th>
+                                                            <td scope="row"></td>
+                                                            <td scope="row">datetime</td>
                                                             <td scope="row"></td>
                                                             <td scope="row">
                                                                 <span class="required">* Required</span>
@@ -259,7 +499,7 @@ Hvis der angives 'Andet' i type, er det muligt at indsende yderligere informatio
                                                         <tr>
                                                             <th scope="row">Note</th>
                                                             <td scope="row"></td>
-                                                            <td scope="row">string</td>
+                                                            <td scope="row">str</td>
                                                             <td scope="row"></td>
                                                             <td scope="row"></td>
                                                         </tr>
@@ -268,149 +508,50 @@ Hvis der angives 'Andet' i type, er det muligt at indsende yderligere informatio
                                             </div>
                                         </div>
                                         <div class="dataObject">
-                                            <a data-bs-toggle='collapse' aria-expanded='false' href="#OxygenSaturation2" class="ObjectHeaderWrapper">
+                                            <a data-bs-toggle='collapse' aria-expanded='false' href="#PulseRate6" class="ObjectHeaderWrapper">
                                                 <ol class="breadcrumb objectHeaderMain objectHeaderColor">
                                                     <i class="bi bi-folder2 me-2"></i>
                                                     <li class="breadcrumb-item">DAH</li>
-                                                    <li class="breadcrumb-item">Report</li>
-                                                    <li class="breadcrumb-item">Data</li>
                                                     <li class="breadcrumb-item">Observations</li>
-                                                    <li aria-current='page' class="breadcrumb-item active">OxygenSaturation</li>
+                                                    <li aria-current='page' class="breadcrumb-item active">PulseRate</li>
                                                 </ol>
                                             </a>
-                                            <div class="collapse m-3 objectBodyMain" id="OxygenSaturation2">
+                                            <div class="collapse m-3 objectBodyMain" id="PulseRate6">
+                                                <p style="height: 1rem !important; margin: 0px !important;"></p>
                                                 <div class="objectDescription bg-body-tertiary">
-                                                    Første iltmætningsmåling.
+                                                    Første pulsmåling.
                                                 </div>
+                                                <h2>Object: Attributes</h2>
                                                 <table class="table table-bordered table-striped table-hover ">
                                                     <thead>
                                                         <tr>
                                                             <th scope="col" class="fst-italic th-attribute">Attribute</th>
                                                             <th scope="col" class="fst-italic th-description">Description</th>
                                                             <th scope="col" class="fst-italic th-type">Type</th>
-                                                            <th scope="col" class="fst-italic th-value">Accepted Value(s)</th>
+                                                            <th scope="col" class="fst-italic th-value">Constraints</th>
                                                             <th scope="col" class="fst-italic th-required">Required</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody class="table-group-divider">
-                                                        <tr>
-                                                            <th scope="row">ResultValue</th>
-                                                            <td scope="row">Enhed = %</td>
-                                                            <td scope="row">int</td>
-                                                            <td scope="row">
-                                                                <ul class="list-group list-group-flush"></ul>
-                                                                <li class="list-group-item">Minumum værdi 0</li>
-                                                                <li class="list-group-item">Maximum værdi 100</li>
-                                                            </td>
-                                                            <td scope="row">
-                                                                <span class="required">* Required</span>
-                                                            </td>
-                                                        </tr>
                                                         <tr>
                                                             <th scope="row">DateTime</th>
                                                             <td scope="row"></td>
-                                                            <td scope="row">DateTime</td>
+                                                            <td scope="row">datetime</td>
                                                             <td scope="row"></td>
                                                             <td scope="row">
                                                                 <span class="required">* Required</span>
                                                             </td>
                                                         </tr>
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                        </div>
-                                        <div class="dataObject">
-                                            <a data-bs-toggle='collapse' aria-expanded='false' href="#SystolicBloodPressure3" class="ObjectHeaderWrapper">
-                                                <ol class="breadcrumb objectHeaderMain objectHeaderColor">
-                                                    <i class="bi bi-folder2 me-2"></i>
-                                                    <li class="breadcrumb-item">DAH</li>
-                                                    <li class="breadcrumb-item">Report</li>
-                                                    <li class="breadcrumb-item">Data</li>
-                                                    <li class="breadcrumb-item">Observations</li>
-                                                    <li aria-current='page' class="breadcrumb-item active">SystolicBloodPressure</li>
-                                                </ol>
-                                            </a>
-                                            <div class="collapse m-3 objectBodyMain" id="SystolicBloodPressure3">
-                                                <div class="objectDescription bg-body-tertiary">
-                                                    Blodtryksmåling (stystolisk).
-                                                </div>
-                                                <table class="table table-bordered table-striped table-hover ">
-                                                    <thead>
-                                                        <tr>
-                                                            <th scope="col" class="fst-italic th-attribute">Attribute</th>
-                                                            <th scope="col" class="fst-italic th-description">Description</th>
-                                                            <th scope="col" class="fst-italic th-type">Type</th>
-                                                            <th scope="col" class="fst-italic th-value">Accepted Value(s)</th>
-                                                            <th scope="col" class="fst-italic th-required">Required</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody class="table-group-divider">
-                                                        <tr>
-                                                            <th scope="row">ResultValue</th>
-                                                            <td scope="row"></td>
-                                                            <td scope="row">int</td>
-                                                            <td scope="row">Minimum værdi: 0</td>
-                                                            <td scope="row">
-                                                                <span class="required">* Required</span>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th scope="row">DateTime</th>
-                                                            <td scope="row"></td>
-                                                            <td scope="row">DateTime</td>
-                                                            <td scope="row"></td>
-                                                            <td scope="row">
-                                                                <span class="required">* Required</span>
-                                                            </td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                        </div>
-                                        <div class="dataObject">
-                                            <a data-bs-toggle='collapse' aria-expanded='false' href="#GlascowComaScale4" class="ObjectHeaderWrapper">
-                                                <ol class="breadcrumb objectHeaderMain objectHeaderColor">
-                                                    <i class="bi bi-folder2 me-2"></i>
-                                                    <li class="breadcrumb-item">DAH</li>
-                                                    <li class="breadcrumb-item">Report</li>
-                                                    <li class="breadcrumb-item">Data</li>
-                                                    <li class="breadcrumb-item">Observations</li>
-                                                    <li aria-current='page' class="breadcrumb-item active">GlascowComaScale</li>
-                                                </ol>
-                                            </a>
-                                            <div class="collapse m-3 objectBodyMain" id="GlascowComaScale4">
-                                                <div class="objectDescription bg-body-tertiary">
-                                                    Første Glascow Coma Scale måling.
-                                                </div>
-                                                <table class="table table-bordered table-striped table-hover ">
-                                                    <thead>
-                                                        <tr>
-                                                            <th scope="col" class="fst-italic th-attribute">Attribute</th>
-                                                            <th scope="col" class="fst-italic th-description">Description</th>
-                                                            <th scope="col" class="fst-italic th-type">Type</th>
-                                                            <th scope="col" class="fst-italic th-value">Accepted Value(s)</th>
-                                                            <th scope="col" class="fst-italic th-required">Required</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody class="table-group-divider">
                                                         <tr>
                                                             <th scope="row">ResultValue</th>
                                                             <td scope="row"></td>
                                                             <td scope="row">int</td>
                                                             <td scope="row">
-                                                                <ul class="list-group list-group-flush"></ul>
-                                                                <li class="list-group-item">Minumum værdi 3</li>
-                                                                <li class="list-group-item">Maximum værdi 15</li>
+                                                                <p style="margin:0px; font-weight: bold;">Min</p>
+                                                                <ul class="list-group list-group-flush">
+                                                                    <li class="list-group-item">0</li>
+                                                                </ul>
                                                             </td>
-                                                            <td scope="row">
-                                                                <span class="required">* Required</span>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th scope="row">DateTime</th>
-                                                            <td scope="row"></td>
-                                                            <td scope="row">DateTime</td>
-                                                            <td scope="row"></td>
                                                             <td scope="row">
                                                                 <span class="required">* Required</span>
                                                             </td>
@@ -420,179 +561,80 @@ Hvis der angives 'Andet' i type, er det muligt at indsende yderligere informatio
                                             </div>
                                         </div>
                                         <div class="dataObject">
-                                            <a data-bs-toggle='collapse' aria-expanded='false' href="#AVPUScale5" class="ObjectHeaderWrapper">
+                                            <a data-bs-toggle='collapse' aria-expanded='false' href="#RespiratoryRate7" class="ObjectHeaderWrapper">
                                                 <ol class="breadcrumb objectHeaderMain objectHeaderColor">
                                                     <i class="bi bi-folder2 me-2"></i>
                                                     <li class="breadcrumb-item">DAH</li>
-                                                    <li class="breadcrumb-item">Report</li>
-                                                    <li class="breadcrumb-item">Data</li>
-                                                    <li class="breadcrumb-item">Observations</li>
-                                                    <li aria-current='page' class="breadcrumb-item active">AVPUScale</li>
-                                                </ol>
-                                            </a>
-                                            <div class="collapse m-3 objectBodyMain" id="AVPUScale5">
-                                                <div class="objectDescription bg-body-tertiary">
-                                                    Første AVPU skala (bevidsthed).
-                                                </div>
-                                                <table class="table table-bordered table-striped table-hover ">
-                                                    <thead>
-                                                        <tr>
-                                                            <th scope="col" class="fst-italic th-attribute">Attribute</th>
-                                                            <th scope="col" class="fst-italic th-description">Description</th>
-                                                            <th scope="col" class="fst-italic th-type">Type</th>
-                                                            <th scope="col" class="fst-italic th-value">Accepted Value(s)</th>
-                                                            <th scope="col" class="fst-italic th-required">Required</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody class="table-group-divider">
-                                                        <tr>
-                                                            <th scope="row">ResultCode</th>
-                                                            <td scope="row">A = Alert, 
-V = Verbal, 
-P = Pain, 
-U = Unresponsive</td>
-                                                            <td scope="row">string</td>
-                                                            <td scope="row">a, v, p, u</td>
-                                                            <td scope="row">
-                                                                <span class="required">* Required</span>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th scope="row">DateTime</th>
-                                                            <td scope="row"></td>
-                                                            <td scope="row">DateTime</td>
-                                                            <td scope="row"></td>
-                                                            <td scope="row">
-                                                                <span class="required">* Required</span>
-                                                            </td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                        </div>
-                                        <div class="dataObject">
-                                            <a data-bs-toggle='collapse' aria-expanded='false' href="#Triage6" class="ObjectHeaderWrapper">
-                                                <ol class="breadcrumb objectHeaderMain objectHeaderColor">
-                                                    <i class="bi bi-folder2 me-2"></i>
-                                                    <li class="breadcrumb-item">DAH</li>
-                                                    <li class="breadcrumb-item">Report</li>
-                                                    <li class="breadcrumb-item">Data</li>
-                                                    <li class="breadcrumb-item">Observations</li>
-                                                    <li aria-current='page' class="breadcrumb-item active">Triage</li>
-                                                </ol>
-                                            </a>
-                                            <div class="collapse m-3 objectBodyMain" id="Triage6">
-                                                <div class="objectDescription bg-body-tertiary">
-                                                    Første Triage kategorisering.
-                                                </div>
-                                                <table class="table table-bordered table-striped table-hover ">
-                                                    <thead>
-                                                        <tr>
-                                                            <th scope="col" class="fst-italic th-attribute">Attribute</th>
-                                                            <th scope="col" class="fst-italic th-description">Description</th>
-                                                            <th scope="col" class="fst-italic th-type">Type</th>
-                                                            <th scope="col" class="fst-italic th-value">Accepted Value(s)</th>
-                                                            <th scope="col" class="fst-italic th-required">Required</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody class="table-group-divider">
-                                                        <tr>
-                                                            <th scope="row">ResultCode</th>
-                                                            <td scope="row">R = Red, 
-O = Orange, 
-Y = Yellow, 
-G = Green, 
-B = Blue</td>
-                                                            <td scope="row">string</td>
-                                                            <td scope="row">r, o, y, g, b</td>
-                                                            <td scope="row">
-                                                                <span class="required">* Required</span>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th scope="row">DateTime</th>
-                                                            <td scope="row"></td>
-                                                            <td scope="row">DateTime</td>
-                                                            <td scope="row"></td>
-                                                            <td scope="row">
-                                                                <span class="required">* Required</span>
-                                                            </td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                        </div>
-                                        <div class="dataObject">
-                                            <a data-bs-toggle='collapse' aria-expanded='false' href="#OxygenDemand7" class="ObjectHeaderWrapper">
-                                                <ol class="breadcrumb objectHeaderMain objectHeaderColor">
-                                                    <i class="bi bi-folder2 me-2"></i>
-                                                    <li class="breadcrumb-item">DAH</li>
-                                                    <li class="breadcrumb-item">Report</li>
-                                                    <li class="breadcrumb-item">Data</li>
-                                                    <li class="breadcrumb-item">Observations</li>
-                                                    <li aria-current='page' class="breadcrumb-item active">OxygenDemand</li>
-                                                </ol>
-                                            </a>
-                                            <div class="collapse m-3 objectBodyMain" id="OxygenDemand7">
-                                                <div class="objectDescription bg-body-tertiary">
-                                                    Første iltbehov.
-                                                </div>
-                                                <table class="table table-bordered table-striped table-hover ">
-                                                    <thead>
-                                                        <tr>
-                                                            <th scope="col" class="fst-italic th-attribute">Attribute</th>
-                                                            <th scope="col" class="fst-italic th-description">Description</th>
-                                                            <th scope="col" class="fst-italic th-type">Type</th>
-                                                            <th scope="col" class="fst-italic th-value">Accepted Value(s)</th>
-                                                            <th scope="col" class="fst-italic th-required">Required</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody class="table-group-divider">
-                                                        <tr>
-                                                            <th scope="row">ResultCode</th>
-                                                            <td scope="row">Y = Yes,
-N = No</td>
-                                                            <td scope="row">string</td>
-                                                            <td scope="row">y, n</td>
-                                                            <td scope="row">
-                                                                <span class="required">* Required</span>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th scope="row">DateTime</th>
-                                                            <td scope="row"></td>
-                                                            <td scope="row">DateTime</td>
-                                                            <td scope="row"></td>
-                                                            <td scope="row">
-                                                                <span class="required">* Required</span>
-                                                            </td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                        </div>
-                                        <div class="dataObject">
-                                            <a data-bs-toggle='collapse' aria-expanded='false' href="#RespiratoryRate8" class="ObjectHeaderWrapper">
-                                                <ol class="breadcrumb objectHeaderMain objectHeaderColor">
-                                                    <i class="bi bi-folder2 me-2"></i>
-                                                    <li class="breadcrumb-item">DAH</li>
-                                                    <li class="breadcrumb-item">Report</li>
-                                                    <li class="breadcrumb-item">Data</li>
                                                     <li class="breadcrumb-item">Observations</li>
                                                     <li aria-current='page' class="breadcrumb-item active">RespiratoryRate</li>
                                                 </ol>
                                             </a>
-                                            <div class="collapse m-3 objectBodyMain" id="RespiratoryRate8">
+                                            <div class="collapse m-3 objectBodyMain" id="RespiratoryRate7">
+                                                <p style="height: 1rem !important; margin: 0px !important;"></p>
                                                 <div class="objectDescription bg-body-tertiary">
                                                     Første respirationsfrekvens måling.
                                                 </div>
+                                                <h2>Object: Attributes</h2>
                                                 <table class="table table-bordered table-striped table-hover ">
                                                     <thead>
                                                         <tr>
                                                             <th scope="col" class="fst-italic th-attribute">Attribute</th>
                                                             <th scope="col" class="fst-italic th-description">Description</th>
                                                             <th scope="col" class="fst-italic th-type">Type</th>
-                                                            <th scope="col" class="fst-italic th-value">Accepted Value(s)</th>
+                                                            <th scope="col" class="fst-italic th-value">Constraints</th>
+                                                            <th scope="col" class="fst-italic th-required">Required</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody class="table-group-divider">
+                                                        <tr>
+                                                            <th scope="row">DateTime</th>
+                                                            <td scope="row"></td>
+                                                            <td scope="row">datetime</td>
+                                                            <td scope="row"></td>
+                                                            <td scope="row">
+                                                                <span class="required">* Required</span>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="row">ResultValue</th>
+                                                            <td scope="row"></td>
+                                                            <td scope="row">int</td>
+                                                            <td scope="row">
+                                                                <p style="margin:0px; font-weight: bold;">Min</p>
+                                                                <ul class="list-group list-group-flush">
+                                                                    <li class="list-group-item">0</li>
+                                                                </ul>
+                                                            </td>
+                                                            <td scope="row">
+                                                                <span class="required">* Required</span>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <div class="dataObject">
+                                            <a data-bs-toggle='collapse' aria-expanded='false' href="#SystolicBloodPressure8" class="ObjectHeaderWrapper">
+                                                <ol class="breadcrumb objectHeaderMain objectHeaderColor">
+                                                    <i class="bi bi-folder2 me-2"></i>
+                                                    <li class="breadcrumb-item">DAH</li>
+                                                    <li class="breadcrumb-item">Observations</li>
+                                                    <li aria-current='page' class="breadcrumb-item active">SystolicBloodPressure</li>
+                                                </ol>
+                                            </a>
+                                            <div class="collapse m-3 objectBodyMain" id="SystolicBloodPressure8">
+                                                <p style="height: 1rem !important; margin: 0px !important;"></p>
+                                                <div class="objectDescription bg-body-tertiary">
+                                                    Blodtryksmåling (stystolisk).
+                                                </div>
+                                                <h2>Object: Attributes</h2>
+                                                <table class="table table-bordered table-striped table-hover ">
+                                                    <thead>
+                                                        <tr>
+                                                            <th scope="col" class="fst-italic th-attribute">Attribute</th>
+                                                            <th scope="col" class="fst-italic th-description">Description</th>
+                                                            <th scope="col" class="fst-italic th-type">Type</th>
+                                                            <th scope="col" class="fst-italic th-value">Constraints</th>
                                                             <th scope="col" class="fst-italic th-required">Required</th>
                                                         </tr>
                                                     </thead>
@@ -601,7 +643,12 @@ N = No</td>
                                                             <th scope="row">ResultValue</th>
                                                             <td scope="row"></td>
                                                             <td scope="row">int</td>
-                                                            <td scope="row">Minimum værdi: 0</td>
+                                                            <td scope="row">
+                                                                <p style="margin:0px; font-weight: bold;">Min</p>
+                                                                <ul class="list-group list-group-flush">
+                                                                    <li class="list-group-item">0</li>
+                                                                </ul>
+                                                            </td>
                                                             <td scope="row">
                                                                 <span class="required">* Required</span>
                                                             </td>
@@ -609,7 +656,7 @@ N = No</td>
                                                         <tr>
                                                             <th scope="row">DateTime</th>
                                                             <td scope="row"></td>
-                                                            <td scope="row">DateTime</td>
+                                                            <td scope="row">datetime</td>
                                                             <td scope="row"></td>
                                                             <td scope="row">
                                                                 <span class="required">* Required</span>
@@ -624,23 +671,23 @@ N = No</td>
                                                 <ol class="breadcrumb objectHeaderMain objectHeaderColor">
                                                     <i class="bi bi-folder2 me-2"></i>
                                                     <li class="breadcrumb-item">DAH</li>
-                                                    <li class="breadcrumb-item">Report</li>
-                                                    <li class="breadcrumb-item">Data</li>
                                                     <li class="breadcrumb-item">Observations</li>
                                                     <li aria-current='page' class="breadcrumb-item active">Temperature</li>
                                                 </ol>
                                             </a>
                                             <div class="collapse m-3 objectBodyMain" id="Temperature9">
+                                                <p style="height: 1rem !important; margin: 0px !important;"></p>
                                                 <div class="objectDescription bg-body-tertiary">
                                                     Første temperatur måling.
                                                 </div>
+                                                <h2>Object: Attributes</h2>
                                                 <table class="table table-bordered table-striped table-hover ">
                                                     <thead>
                                                         <tr>
                                                             <th scope="col" class="fst-italic th-attribute">Attribute</th>
                                                             <th scope="col" class="fst-italic th-description">Description</th>
                                                             <th scope="col" class="fst-italic th-type">Type</th>
-                                                            <th scope="col" class="fst-italic th-value">Accepted Value(s)</th>
+                                                            <th scope="col" class="fst-italic th-value">Constraints</th>
                                                             <th scope="col" class="fst-italic th-required">Required</th>
                                                         </tr>
                                                     </thead>
@@ -648,8 +695,13 @@ N = No</td>
                                                         <tr>
                                                             <th scope="row">ResultValue</th>
                                                             <td scope="row">Enhed = grader</td>
-                                                            <td scope="row">int</td>
-                                                            <td scope="row">Minimum værdi: 0</td>
+                                                            <td scope="row">float</td>
+                                                            <td scope="row">
+                                                                <p style="margin:0px; font-weight: bold;">Min</p>
+                                                                <ul class="list-group list-group-flush">
+                                                                    <li class="list-group-item">0</li>
+                                                                </ul>
+                                                            </td>
                                                             <td scope="row">
                                                                 <span class="required">* Required</span>
                                                             </td>
@@ -657,7 +709,7 @@ N = No</td>
                                                         <tr>
                                                             <th scope="row">DateTime</th>
                                                             <td scope="row"></td>
-                                                            <td scope="row">DateTime</td>
+                                                            <td scope="row">datetime</td>
                                                             <td scope="row"></td>
                                                             <td scope="row">
                                                                 <span class="required">* Required</span>
@@ -668,45 +720,54 @@ N = No</td>
                                             </div>
                                         </div>
                                         <div class="dataObject">
-                                            <a data-bs-toggle='collapse' aria-expanded='false' href="#PulseRate10" class="ObjectHeaderWrapper">
+                                            <a data-bs-toggle='collapse' aria-expanded='false' href="#Triage10" class="ObjectHeaderWrapper">
                                                 <ol class="breadcrumb objectHeaderMain objectHeaderColor">
                                                     <i class="bi bi-folder2 me-2"></i>
                                                     <li class="breadcrumb-item">DAH</li>
-                                                    <li class="breadcrumb-item">Report</li>
-                                                    <li class="breadcrumb-item">Data</li>
                                                     <li class="breadcrumb-item">Observations</li>
-                                                    <li aria-current='page' class="breadcrumb-item active">PulseRate</li>
+                                                    <li aria-current='page' class="breadcrumb-item active">Triage</li>
                                                 </ol>
                                             </a>
-                                            <div class="collapse m-3 objectBodyMain" id="PulseRate10">
+                                            <div class="collapse m-3 objectBodyMain" id="Triage10">
+                                                <p style="height: 1rem !important; margin: 0px !important;"></p>
                                                 <div class="objectDescription bg-body-tertiary">
-                                                    Første pulsmåling.
+                                                    Første Triage kategorisering.
                                                 </div>
+                                                <h2>Object: Attributes</h2>
                                                 <table class="table table-bordered table-striped table-hover ">
                                                     <thead>
                                                         <tr>
                                                             <th scope="col" class="fst-italic th-attribute">Attribute</th>
                                                             <th scope="col" class="fst-italic th-description">Description</th>
                                                             <th scope="col" class="fst-italic th-type">Type</th>
-                                                            <th scope="col" class="fst-italic th-value">Accepted Value(s)</th>
+                                                            <th scope="col" class="fst-italic th-value">Constraints</th>
                                                             <th scope="col" class="fst-italic th-required">Required</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody class="table-group-divider">
                                                         <tr>
-                                                            <th scope="row">ResultValue</th>
+                                                            <th scope="row">DateTime</th>
                                                             <td scope="row"></td>
-                                                            <td scope="row">int</td>
-                                                            <td scope="row">Minimum værdi: 0</td>
+                                                            <td scope="row">datetime</td>
+                                                            <td scope="row"></td>
                                                             <td scope="row">
                                                                 <span class="required">* Required</span>
                                                             </td>
                                                         </tr>
                                                         <tr>
-                                                            <th scope="row">DateTime</th>
-                                                            <td scope="row"></td>
-                                                            <td scope="row">DateTime</td>
-                                                            <td scope="row"></td>
+                                                            <th scope="row">ResultCode</th>
+                                                            <td scope="row">R = Red, O = Orange, Y = Yellow, G = Green, B = Blue</td>
+                                                            <td scope="row">udfald (str)</td>
+                                                            <td scope="row">
+                                                                <p style="margin:0px; font-weight: bold;">Udfald:</p>
+                                                                <ul class="list-group list-group-flush">
+                                                                    <li class="list-group-item">r</li>
+                                                                    <li class="list-group-item">o</li>
+                                                                    <li class="list-group-item">y</li>
+                                                                    <li class="list-group-item">g</li>
+                                                                    <li class="list-group-item">b</li>
+                                                                </ul>
+                                                            </td>
                                                             <td scope="row">
                                                                 <span class="required">* Required</span>
                                                             </td>
@@ -716,71 +777,27 @@ N = No</td>
                                             </div>
                                         </div>
                                     </div>
-                                    <div id="groupMeta" class="groupMeta">
-                                        <div class="dataObject">
-                                            <a data-bs-toggle='collapse' aria-expanded='false' href="#Patient" class="ObjectHeaderWrapper">
-                                                <ol class="breadcrumb objectHeaderMain objectHeaderColor">
-                                                    <i class="bi bi-folder2 me-2"></i>
-                                                    <li class="breadcrumb-item">DAH</li>
-                                                    <li class="breadcrumb-item">Report</li>
-                                                    <li aria-current='page' class="breadcrumb-item active">Patient</li>
-                                                    <span class="required ms-auto">* Required</span>
-                                                </ol>
-                                            </a>
-                                            <div class="collapse m-3 objectBodyMain" id="Patient">
-                                                <div class="objectDescription bg-body-tertiary">
-                                                </div>
-                                                <table class="table table-bordered table-striped table-hover ">
-                                                    <thead>
-                                                        <tr>
-                                                            <th scope="col" class="fst-italic th-attribute">Attribute</th>
-                                                            <th scope="col" class="fst-italic th-description">Description</th>
-                                                            <th scope="col" class="fst-italic th-type">Type</th>
-                                                            <th scope="col" class="fst-italic th-value">Accepted Value(s)</th>
-                                                            <th scope="col" class="fst-italic th-required">Required</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody class="table-group-divider">
-                                                        <tr>
-                                                            <th scope="row">CivilRegistrationNumber</th>
-                                                            <td scope="row"></td>
-                                                            <td scope="row">string</td>
-                                                            <td scope="row"></td>
-                                                            <td scope="row">
-                                                                <span class="required">* Required</span>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th scope="row">PatientId</th>
-                                                            <td scope="row"></td>
-                                                            <td scope="row">string</td>
-                                                            <td scope="row"></td>
-                                                            <td scope="row"></td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                        </div>
+                                    <div id="groupReport" class="groupReport">
                                         <div class="dataObject">
                                             <a data-bs-toggle='collapse' aria-expanded='false' href="#Organization" class="ObjectHeaderWrapper">
                                                 <ol class="breadcrumb objectHeaderMain objectHeaderColor">
                                                     <i class="bi bi-folder2 me-2"></i>
-                                                    <li class="breadcrumb-item">DAH</li>
+                                                    <li class="breadcrumb-item">root</li>
                                                     <li class="breadcrumb-item">Report</li>
                                                     <li aria-current='page' class="breadcrumb-item active">Organization</li>
                                                     <span class="required ms-auto">* Required</span>
                                                 </ol>
                                             </a>
                                             <div class="collapse m-3 objectBodyMain" id="Organization">
-                                                <div class="objectDescription bg-body-tertiary">
-                                                </div>
+                                                <p style="height: 1rem !important; margin: 0px !important;"></p>
+                                                <h2>Object: Attributes</h2>
                                                 <table class="table table-bordered table-striped table-hover ">
                                                     <thead>
                                                         <tr>
                                                             <th scope="col" class="fst-italic th-attribute">Attribute</th>
                                                             <th scope="col" class="fst-italic th-description">Description</th>
                                                             <th scope="col" class="fst-italic th-type">Type</th>
-                                                            <th scope="col" class="fst-italic th-value">Accepted Value(s)</th>
+                                                            <th scope="col" class="fst-italic th-value">Constraint(s)</th>
                                                             <th scope="col" class="fst-italic th-required">Required</th>
                                                         </tr>
                                                     </thead>
@@ -788,8 +805,18 @@ N = No</td>
                                                         <tr>
                                                             <th scope="row">OrganizationType</th>
                                                             <td scope="row"></td>
-                                                            <td scope="row">string</td>
-                                                            <td scope="row">sor, shak, regionskode, kommunekode, ydernummer, lokationsnummer</td>
+                                                            <td scope="row">Udfald (str)</td>
+                                                            <td scope="row">
+                                                                <p style="margin:0px; font-weight: bold;">Udfald:</p>
+                                                                <ul class="list-group list-group-flush">
+                                                                    <li class="list-group-item">sor</li>
+                                                                    <li class="list-group-item">shak</li>
+                                                                    <li class="list-group-item">regionskode</li>
+                                                                    <li class="list-group-item">kommunekode</li>
+                                                                    <li class="list-group-item">ydernummer</li>
+                                                                    <li class="list-group-item">lokationsnummer</li>
+                                                                </ul>
+                                                            </td>
                                                             <td scope="row">
                                                                 <span class="required">* Required</span>
                                                             </td>
@@ -802,6 +829,50 @@ N = No</td>
                                                             <td scope="row">
                                                                 <span class="required">* Required</span>
                                                             </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <div class="dataObject">
+                                            <a data-bs-toggle='collapse' aria-expanded='false' href="#Patient" class="ObjectHeaderWrapper">
+                                                <ol class="breadcrumb objectHeaderMain objectHeaderColor">
+                                                    <i class="bi bi-folder2 me-2"></i>
+                                                    <li class="breadcrumb-item">root</li>
+                                                    <li class="breadcrumb-item">Report</li>
+                                                    <li aria-current='page' class="breadcrumb-item active">Patient</li>
+                                                    <span class="required ms-auto">* Required</span>
+                                                </ol>
+                                            </a>
+                                            <div class="collapse m-3 objectBodyMain" id="Patient">
+                                                <p style="height: 1rem !important; margin: 0px !important;"></p>
+                                                <h2>Object: Attributes</h2>
+                                                <table class="table table-bordered table-striped table-hover ">
+                                                    <thead>
+                                                        <tr>
+                                                            <th scope="col" class="fst-italic th-attribute">Attribute</th>
+                                                            <th scope="col" class="fst-italic th-description">Description</th>
+                                                            <th scope="col" class="fst-italic th-type">Type</th>
+                                                            <th scope="col" class="fst-italic th-value">Constraints</th>
+                                                            <th scope="col" class="fst-italic th-required">Required</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody class="table-group-divider">
+                                                        <tr>
+                                                            <th scope="row">CivilRegistrationNumber</th>
+                                                            <td scope="row"></td>
+                                                            <td scope="row">string</td>
+                                                            <td scope="row">Standard formatering af CPR.</td>
+                                                            <td scope="row">
+                                                                <span class="required">* Required</span>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="row">PatientId</th>
+                                                            <td scope="row"></td>
+                                                            <td scope="row">string</td>
+                                                            <td scope="row"></td>
+                                                            <td scope="row"></td>
                                                         </tr>
                                                     </tbody>
                                                 </table>
@@ -824,18 +895,13 @@ N = No</td>
                     </div>
                     <div class="modal-body">
                         <div class="alert alert-tertiary border">
-                            <h6>Description</h6>
                             <p>
-                                                         This is a generated example of the json structure that entities should follow
-                                                         when submitting data to the endpoint of the API. The values are generated according to the
-                                                         validation rules applied to the incoming data. Below you can find both an example of POST request
-                                                         used for submitting a new report, as well as a PUT request to update data in an existing report.
-                                                         <br> <br> Notice that this is not the complete API call. You will need to attach an authorization
-                                                         JWT token to the request as well.
+                                                         This is a generated example of the json structure for submitting data to the root endpoint.
                                                          </p>
                             <hr />
                             <p>
-                                                         For more in-depth information on the process of submitting data to the API, please visit our
+                                                         For more in-depth information on the process of submitting data to the API, please see our
+                                                         <a href="https://www.rkkp.dk/systemer-og-support/indberetningssystemer/wsapi/teknisk-vejledning/" target='blank'>Technical Guide</a> or visit the
                                                          <a href='https://rkkp-wsapi.test.tcs.trifork.cloud/docs' target='_blank'>Swagger UI page</a>.
                                                          There you can find an overview of the API endpoints, as well as detailed descriptions of the
                                                          available API requests that be made to each endpoint. </p>
@@ -854,8 +920,7 @@ N = No</td>
                                     <textarea class="form-control textarea-tabs bg-body-tertiary current_json" id="json_post_textarea" style="height: 1000px">{
     "Report": {
         "Patient": {
-            "CivilRegistrationNumber": "1106144UK7",
-            "PatientId": "SkhObWsYtFCGCmDTLdWz"
+            "CivilRegistrationNumber": "2404345696"
         },
         "Organization": {
             "OrganizationType": "regionskode",
@@ -863,53 +928,53 @@ N = No</td>
         },
         "Data": {
             "Observations": {
-                "PainEvaluation": {
-                    "ResultCode": "vrs",
-                    "ResultValue": 0.0015043090284794873,
-                    "DateTime": "02-01-2003 12:43:49",
-                    "Note": "HzfUEZlBxhTwhptUPzqO"
-                },
-                "OxygenSaturation": {
-                    "ResultValue": 27.357565968777052,
-                    "DateTime": "30-06-2016 12:58:28"
-                },
-                "SystolicBloodPressure": {
-                    "ResultValue": 3,
-                    "DateTime": "04-02-2009 10:31:49"
-                },
-                "GlascowComaScale": {
-                    "ResultValue": 13,
-                    "DateTime": "13-02-2013 03:33:50"
-                },
                 "AVPUScale": {
-                    "ResultCode": "a",
-                    "DateTime": "16-09-2003 12:36:40"
-                },
-                "Triage": {
-                    "ResultCode": "b",
-                    "DateTime": "08-08-2001 02:40:23"
-                },
-                "OxygenDemand": {
-                    "ResultCode": "y",
-                    "DateTime": "02-07-2020 12:36:03"
-                },
-                "RespiratoryRate": {
-                    "ResultValue": 1,
-                    "DateTime": "02-08-1995 20:28:30"
+                    "ResultCode": "p",
+                    "DateTime": "13-03-2005 06:07:51"
                 },
                 "Temperature": {
-                    "ResultValue": 3.8647470949749234,
-                    "DateTime": "23-03-2012 15:11:08"
+                    "ResultValue": 1.355492310769776,
+                    "DateTime": "28-11-2013 18:01:58"
+                },
+                "RespiratoryRate": {
+                    "DateTime": "29-03-2003 10:56:34",
+                    "ResultValue": 2
+                },
+                "GlascowComaScale": {
+                    "ResultValue": 5,
+                    "DateTime": "04-05-2001 01:36:30"
+                },
+                "OxygenDemand": {
+                    "DateTime": "08-08-2009 20:29:22",
+                    "ResultCode": "n"
+                },
+                "PainEvaluation": {
+                    "ResultCode": "andet",
+                    "ResultValue": 1.1028807703658818,
+                    "DateTime": "30-11-2003 05:00:18",
+                    "Note": "rdCqMuXqAFglooFmQFla"
+                },
+                "Triage": {
+                    "DateTime": "24-11-2020 04:03:13",
+                    "ResultCode": "r"
                 },
                 "PulseRate": {
-                    "ResultValue": 1,
-                    "DateTime": "07-04-1999 22:56:53"
+                    "DateTime": "17-06-2011 07:13:15",
+                    "ResultValue": 0
+                },
+                "OxygenSaturation": {
+                    "DateTime": "15-01-2019 15:03:28",
+                    "ResultValue": 87.24177726737156
+                },
+                "SystolicBloodPressure": {
+                    "ResultValue": 9,
+                    "DateTime": "06-01-2019 19:08:31"
                 }
             },
             "Contacts": {
                 "NoteType": {
-                    "DateTime": "22-08-2007 12:03:02",
-                    "Note": "CbsAjNqgRUksKzDYhJhM"
+                    "Note": "EALRnSBehvQlBNaAgugO",
+                    "DateTime": "26-08-2007 08:44:19"
                 }
             }
         }
@@ -928,53 +993,53 @@ N = No</td>
         },
         "Data": {
             "Observations": {
+                "AVPUScale": {
+                    "ResultCode": "p",
+                    "DateTime": "08-05-2021 17:41:49"
+                },
+                "Temperature": {
+                    "ResultValue": 3.588974079697031,
+                    "DateTime": "21-06-1999 16:02:01"
+                },
+                "RespiratoryRate": {
+                    "DateTime": "23-04-2022 23:48:25",
+                    "ResultValue": 5
+                },
+                "GlascowComaScale": {
+                    "ResultValue": 3,
+                    "DateTime": "27-01-1999 00:15:28"
+                },
+                "OxygenDemand": {
+                    "DateTime": "06-01-2009 06:08:13",
+                    "ResultCode": "y"
+                },
                 "PainEvaluation": {
-                    "ResultCode": "vas",
-                    "ResultValue": 3.3037811620656616,
-                    "DateTime": "23-03-2009 02:52:48",
-                    "Note": "enLGwqbDjfnvnOUsBpzc"
+                    "ResultCode": "vrs",
+                    "ResultValue": 0.42763901034389923,
+                    "DateTime": "24-08-2012 01:55:57",
+                    "Note": "QcXvROQYMhKkVuwWbXXZ"
+                },
+                "Triage": {
+                    "DateTime": "28-04-2004 01:08:08",
+                    "ResultCode": "y"
+                },
+                "PulseRate": {
+                    "DateTime": "25-10-1999 02:46:29",
+                    "ResultValue": 3
                 },
                 "OxygenSaturation": {
-                    "ResultValue": 45.712875524518324,
-                    "DateTime": "16-09-2000 15:07:59"
+                    "DateTime": "15-10-2022 04:17:01",
+                    "ResultValue": 96.51045823710452
                 },
                 "SystolicBloodPressure": {
                     "ResultValue": 4,
-                    "DateTime": "17-08-2023 00:52:38"
-                },
-                "GlascowComaScale": {
-                    "ResultValue": 13,
-                    "DateTime": "01-10-2011 01:37:03"
-                },
-                "AVPUScale": {
-                    "ResultCode": "p",
-                    "DateTime": "12-12-2011 20:44:18"
-                },
-                "Triage": {
-                    "ResultCode": "o",
-                    "DateTime": "23-05-1998 05:29:39"
-                },
-                "OxygenDemand": {
-                    "ResultCode": "y",
-                    "DateTime": "19-07-2010 08:01:30"
-                },
-                "RespiratoryRate": {
-                    "ResultValue": 4,
-                    "DateTime": "24-11-2020 04:46:27"
-                },
-                "Temperature": {
-                    "ResultValue": 0.05621457530612157,
-                    "DateTime": "28-09-2011 00:56:21"
-                },
-                "PulseRate": {
-                    "ResultValue": 3,
-                    "DateTime": "22-02-2011 15:17:00"
+                    "DateTime": "11-01-2014 01:16:37"
                 }
             },
             "Contacts": {
                 "NoteType": {
-                    "DateTime": "09-01-2016 02:33:40",
-                    "Note": "RGccpTFRuYxfNjaKjRdH"
+                    "Note": "JKrwBKLyjDcbGwTOPPoj",
+                    "DateTime": "07-03-1999 03:52:44"
                 }
             }
         }
@@ -994,7 +1059,7 @@ N = No</td>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" crossorgigin="anonymous"></script>
         <script>
-             
+            
             // Hide a Column from Col Index in a table
         function hideAdvancedColumn(columnIndex) {
             var tables = document.querySelectorAll('table');
@@ -1026,6 +1091,7 @@ N = No</td>
             var hiddenRows = document.querySelectorAll('tr.hidden-row, th.hidden-row');
             var visibleCells = document.querySelectorAll('td.visible-col, th.visible-col');
             var visibleRows = document.querySelectorAll('tr.visible-row, th.visible-row');
+            var gitHubIcon = document.getElementById('github-link');
 
             if (checkboxAdvView.checked) {
                 hiddenCells.forEach(function (cell) {
@@ -1037,6 +1103,7 @@ N = No</td>
                     row.classList.remove('hidden-row');
                     row.classList.add('visible-row');
                 });
+                gitHubIcon.classList.remove('hidden');
             } else {
                 visibleCells.forEach(function (cell) {
                     cell.classList.remove('visible-col');
@@ -1047,12 +1114,13 @@ N = No</td>
                     row.classList.remove('visible-row');
                     row.classList.add('hidden-row');
                 });
+                gitHubIcon.classList.add('hidden');
             }
         }
         
         </script>
         <script>
-                    var allGroups = ["groupMeta", "groupActivity", "groupContact", "groupCourse", "groupDiagnosis", "groupObservation"];
+                    var allGroups = ["groupReport", "groupActivity", "groupContact", "groupCourse", "groupDiagnosis", "groupObservation", "groupGray"];
 
         function filterTypes(targetGroup, button) {
             var oldTab = document.querySelector('.nav-link.active');
@@ -1061,8 +1129,10 @@ N = No</td>
             if (targetGroup === "showAll") {
                 allGroups.forEach(function (elementId) {
                     var a = document.getElementById(elementId);
-                    if (a.classList.contains("hidden")) {
-                        a.classList.remove("hidden");
+                    if (a) {  // Check if the element exists
+                        if (a.classList.contains("hidden")) {
+                            a.classList.remove("hidden");
+                        }
                     }
                 });
             } else {
@@ -1082,23 +1152,23 @@ N = No</td>
         }
         </script>
         <script>
-                    
+            
         function jsonTabs(button) {
             console.log(button)
             if (button === "postJSONTab") {
                 document.getElementById('putJSONTab').classList.remove('active');
                 document.getElementById('putJSONContent').classList.add('hidden');
                 document.getElementById('postJSONTab').classList.add('active');
-                document.getElementById('postJSONContent').classList.remove('hidden');  
+                document.getElementById('postJSONContent').classList.remove('hidden');
                 document.getElementById('json_post_textarea').classList.add('current_json');
                 document.getElementById('json_put_textarea').classList.remove('current_json');
             } else {
                 document.getElementById('postJSONTab').classList.remove('active');
                 document.getElementById('postJSONContent').classList.add('hidden');
                 document.getElementById('putJSONTab').classList.add('active');
-                document.getElementById('putJSONContent').classList.remove('hidden');         
+                document.getElementById('putJSONContent').classList.remove('hidden');
                 document.getElementById('json_post_textarea').classList.remove('current_json');
-                document.getElementById('json_put_textarea').classList.add('current_json');           
+                document.getElementById('json_put_textarea').classList.add('current_json');
             }
             }
 
@@ -1109,7 +1179,7 @@ N = No</td>
         checkboxGrayscale.addEventListener('change', toggleGrayscale);
         var root = document.documentElement;
         var colorGray = getComputedStyle(root).getPropertyValue('--colorGray');
-        var colorMeta = getComputedStyle(root).getPropertyValue('--colorMeta');
+        var colorReport = getComputedStyle(root).getPropertyValue('--colorReport');
         var colorActivity = getComputedStyle(root).getPropertyValue('--colorActivity');
         var colorContact = getComputedStyle(root).getPropertyValue('--colorContact');
         var colorCourse = getComputedStyle(root).getPropertyValue('--colorCourse');
@@ -1118,14 +1188,14 @@ N = No</td>
 
         function toggleGrayscale() {
             if (checkboxGrayscale.checked) {
-                root.style.setProperty('--colorMeta', colorGray);
+                root.style.setProperty('--colorReport', colorGray);
                 root.style.setProperty('--colorActivity', colorGray);
                 root.style.setProperty('--colorContact', colorGray);
                 root.style.setProperty('--colorCourse', colorGray);
                 root.style.setProperty('--colorDiagnosis', colorGray);
                 root.style.setProperty('--colorObservation', colorGray);
             } else {
-                root.style.setProperty('--colorMeta', colorMeta);
+                root.style.setProperty('--colorReport', colorReport);
                 root.style.setProperty('--colorActivity', colorActivity);
                 root.style.setProperty('--colorContact', colorContact);
                 root.style.setProperty('--colorCourse', colorCourse);
@@ -1214,7 +1284,7 @@ N = No</td>
             document.getElementById('toggleExpand').classList.add('visible');
             document.getElementById('toggleExpand').classList.remove('hidden');
             document.getElementById('toggleCollapse').classList.add('hidden');
-            document.getElementById('toggleCollapse').classList.remove('visible');         
+            document.getElementById('toggleCollapse').classList.remove('visible');
         }
     
         </script>
