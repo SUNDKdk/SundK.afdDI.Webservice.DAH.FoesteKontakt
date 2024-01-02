@@ -1,5 +1,5 @@
 :root {
-	--colorMeta: 		rgba(136,204,238, 0.4);
+	--colorReport: 		rgba(136,204,238, 0.4);
 	--colorActivity: 	rgba(51,34,136, 0.4);
 	--colorContact: 	rgba(170,68,153, 0.4);
 	--colorCourse: 		rgba(17,119,51, 0.4);
@@ -26,6 +26,15 @@ main {
 
 .required {
 	color: red;
+}
+
+.h2, h2 {
+	font-size: 1.25rem;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+    font-weight: 500;
+    line-height: 1.2;
+    color: var(--bs-heading-color);
 }
 
 /* Overwrite Bootstrap Behavior */
@@ -89,6 +98,24 @@ main {
 
 }
 
+.list-group-item {
+	background-color: transparent !important;
+	padding: 3px;
+	margin: 3px 0px 0px 10px;
+}
+
+.list-group-flush>.list-group-item:last-child {
+    border-bottom-width: var(--bs-border-width);
+}
+
+.list-group-item:first-child {
+    border-top-width: var(--bs-border-width);
+}
+
+.bi::before, [class^="bi-"]::before, [class*=" bi-"]::before {
+    vertical-align: -0.18rem !important;
+}
+
 
 /* Layout */
 
@@ -109,7 +136,7 @@ main {
 }
 
 .th-attribute {
-	width: 10% !important;
+	width: 25% !important;
 }
 
 .th-description {
@@ -121,11 +148,19 @@ main {
 }
 
 .th-value {
-	width: 35% !important;
+	width: 15% !important;
 }
 
 .th-required {
 	width: 10% !important;
+}
+
+.object_margin {
+	margin: 0rem 1rem 1rem 1rem !important;
+}
+
+.remove_object_margin {
+	margin: 0rem 0rem 0rem 0rem !important;
 }
 
 /* JSON Styles */
@@ -137,8 +172,6 @@ main {
 
 /* Function Styles */
 
-.advanced-data {}
-
 .hidden-col {
 	visibility: hidden !important;
 	display: none !important;
@@ -148,10 +181,6 @@ main {
 	visibility: hidden !important;
 	display: none !important;
 }
-
-.visible-col {}
-
-.visible-row {}
 
 /* Database Object Style */
 
@@ -179,10 +208,12 @@ main {
 }
 
 .objectDescription {
+	/*
 	padding: 1rem !important;
-	margin: 0rem 1rem 1rem 1rem !important;
 	border-radius: var(--bs-border-radius-lg) !important;
 	border: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color) !important;
+	*/
+	font-style: italic;
 }
 
 .objectDescriptionFlatView {
@@ -200,7 +231,6 @@ main {
 	border-bottom-left-radius: 5px !important;
 	border-bottom-right-radius: 5px !important;
 	margin-top: -1rem !important;
-	padding: 1rem !important
 }
 
 .objectBodyMainFlatView {
@@ -220,39 +250,39 @@ main {
 /* Data Type Colors */
 
 .activity-txt {
-	color: var(--colorActivity);
+	color: var(--colorActivity) !important;
 }
 
-.Meta-txt {
-	color: var(--colorMeta);
+.report-txt {
+	color: var(--colorReport) !important;
 }
 
 .course-txt {
-	color: var(--colorCourse);
+	color: var(--colorCourse) !important;
 }
 
 .contact-txt {
-	color: var(--colorContact)  !important;
+	color: var(--colorContact) !important;
 }
 
 .diagnosis-txt {
-	color: var(--colorDiagnosis);
+	color: var(--colorDiagnosis) !important;
 }
 
 .observation-txt {
-	color: var(--colorObservation);
+	color: var(--colorObservation) !important;
 }
 
-.Gray-txt {
-	color: var(--colorGray);
+.gray-txt {
+	color: var(--colorGray) !important;
 }
 
 #groupActivity .objectHeaderColor {
 	background-color: var(--colorActivity) !important;
 }
 
-#groupMeta .objectHeaderColor {
-	background-color: var(--colorMeta) !important;
+#groupReport .objectHeaderColor {
+	background-color: var(--colorReport) !important;
 }
 
 #groupCourse .objectHeaderColor {
@@ -269,6 +299,10 @@ main {
 
 #groupObservation .objectHeaderColor {
 	background-color: var(--colorObservation) !important;
+}
+
+#groupGray .objectHeaderColor {
+	background-color: var(--colorGray) !important;
 }
 
 .objectHeaderGray {
