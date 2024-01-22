@@ -70,7 +70,7 @@
                                     "childType": "Attribute_ResultCode",
                                     "type": "document",
                                     "GUID": "3a8c3395-1496-450e-a77b-58243f8c47d1",
-                                    "description": "Note: Bruges ved anden type af smertescore",
+                                    "description": "Hvis der angives 'Andet' i type, er det muligt at indsende yderligere information i 'Note' element.",
                                     "required": true,
                                     "error": {}
                                 },
@@ -141,6 +141,7 @@
                                     "childType": "Attribute_Note",
                                     "type": "document",
                                     "GUID": "327e175b-e9b7-458a-8ab1-a790b64e779d",
+                                    "description": "Bruges ved \"andet\" type af smertescore",
                                     "error": {}
                                 }
                             ],
@@ -942,7 +943,7 @@
     "creationTS": "2023-12-20T10:47:56.523Z",
     "GUID": "6d206bc8-5981-4b0c-b858-9135d768eea4",
     "isLineageEnabled": false,
-    "lastModifTS": "2024-01-22T09:48:30.441Z",
+    "lastModifTS": "2024-01-22T12:13:11.856Z",
     "persistenceSchemaVersion": "6",
     "isCreatedByPlugin": true,
     "pluginInformation": {
