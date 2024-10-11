@@ -149,7 +149,8 @@
                             "type": "document",
                             "GUID": "3d6dd84e-d62f-45df-942a-1dfa84166216",
                             "description": "Første smertemåling. ",
-                            "error": {}
+                            "error": {},
+                            "ChangeLogID": "f0ddef4e-069c-43a0-98fd-3e7ac3e9d266"
                         },
                         {
                             "name": "OxygenSaturation",
@@ -212,7 +213,8 @@
                             "type": "document",
                             "GUID": "c886cc0f-c1ee-4c6d-87f0-c003528e6b22",
                             "description": "Første iltmætningsmåling.",
-                            "error": {}
+                            "error": {},
+                            "ChangeLogID": "d0db78b6-d381-4631-a57c-bdae0e50fb3e"
                         },
                         {
                             "name": "SystolicBloodPressure",
@@ -271,7 +273,8 @@
                             "type": "document",
                             "GUID": "00c37e7e-242d-4b54-8734-2e768591b38b",
                             "description": "Blodtryksmåling (systolisk).",
-                            "error": {}
+                            "error": {},
+                            "ChangeLogID": "c8c3c03f-001b-413e-8e2b-d9040ab5d41f"
                         },
                         {
                             "name": "GlasgowComaScale",
@@ -335,7 +338,8 @@
                             "type": "document",
                             "GUID": "9e2253c0-ce80-4cc7-b225-de7e7f000cec",
                             "description": "Første Glasgow Coma Scale måling.",
-                            "error": {}
+                            "error": {},
+                            "ChangeLogID": "3f16c40a-920d-4cac-807b-9633a95e269a"
                         },
                         {
                             "name": "AVPUScale",
@@ -410,7 +414,8 @@
                             "type": "document",
                             "GUID": "3c727c4c-b0c5-45d5-8c12-9c1c2bd9755f",
                             "description": "Første AVPU skala (bevidsthed).",
-                            "error": {}
+                            "error": {},
+                            "ChangeLogID": "f73ca885-c28b-4e1c-8f92-44ce32800812"
                         },
                         {
                             "name": "Triage",
@@ -489,7 +494,8 @@
                             "type": "document",
                             "GUID": "ec8cb9a3-24ad-48f1-a459-038a03a192b4",
                             "description": "Første Triage kategorisering.",
-                            "error": {}
+                            "error": {},
+                            "ChangeLogID": "dc3e4687-f462-45fd-90a4-6f3ac2beca02"
                         },
                         {
                             "name": "OxygenDemand",
@@ -556,7 +562,8 @@
                             "type": "document",
                             "GUID": "2b9a4621-49f9-43b5-a871-203b51173b9e",
                             "description": "Første iltbehov.",
-                            "error": {}
+                            "error": {},
+                            "ChangeLogID": "d3c670fd-d2ee-4c34-b0e9-bc3c479ced50"
                         },
                         {
                             "name": "RespiratoryRate",
@@ -615,7 +622,8 @@
                             "type": "document",
                             "GUID": "2f282304-a252-4631-b85e-2c7e81d6a008",
                             "description": "Første respirationsfrekvens måling.",
-                            "error": {}
+                            "error": {},
+                            "ChangeLogID": "2a697a4f-62e3-4498-8262-4e8d771088b7"
                         },
                         {
                             "name": "Temperature",
@@ -675,7 +683,8 @@
                             "type": "document",
                             "GUID": "2c1f9fc6-f862-40be-ae22-9655be3a3b98",
                             "description": "Første temperatur måling.",
-                            "error": {}
+                            "error": {},
+                            "ChangeLogID": "1bb059f1-1405-478b-ad9a-b1fbe8524bf3"
                         },
                         {
                             "name": "PulseRate",
@@ -734,7 +743,8 @@
                             "type": "document",
                             "GUID": "7693fb9e-e612-493e-8c5d-f85aaef66d5a",
                             "description": "Første pulsmåling.",
-                            "error": {}
+                            "error": {},
+                            "ChangeLogID": "9de3099f-eff6-4a64-9406-7f6b86083702"
                         }
                     ],
                     "childType": "Group_Observation",
@@ -800,7 +810,8 @@
                             "type": "document",
                             "GUID": "fcac5493-930d-430f-b687-a020dec6144d",
                             "description": "Dato for første afsluttet lægenotat samt notattype",
-                            "error": {}
+                            "error": {},
+                            "ChangeLogID": "8158f790-b3f1-4e01-859d-4f2f4abd4fc3"
                         }
                     ],
                     "childType": "Group_Contact",
@@ -824,7 +835,7 @@
             },
             "isActivated": true,
             "additionalProperties": false,
-            "dbVersion": "v1.0.0",
+            "dbVersion": "1.0.0",
             "GUID": "3647786e-2c6e-4b74-914b-66ab1eda6e17",
             "bucketId": "ed6aa961-a083-4e2a-8420-5e8e894ed663",
             "dbNameShort": "DAH"
@@ -943,7 +954,7 @@
     "creationTS": "2023-12-20T10:47:56.523Z",
     "GUID": "6d206bc8-5981-4b0c-b858-9135d768eea4",
     "isLineageEnabled": false,
-    "lastModifTS": "2024-01-22T12:13:11.856Z",
+    "lastModifTS": "2024-10-11T12:33:23.379Z",
     "persistenceSchemaVersion": "6",
     "isCreatedByPlugin": true,
     "pluginInformation": {
