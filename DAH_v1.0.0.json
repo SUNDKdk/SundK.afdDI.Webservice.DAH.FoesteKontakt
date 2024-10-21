@@ -849,8 +849,7 @@
             "dbVersion": "1.0.0",
             "GUID": "3647786e-2c6e-4b74-914b-66ab1eda6e17",
             "bucketId": "ed6aa961-a083-4e2a-8420-5e8e894ed663",
-            "dbNameShort": "DAH",
-            "dbSchema": "Akut"
+            "dbNameShort": "DAH"
         }
     ],
     "buckets": [
@@ -966,7 +965,7 @@
     "creationTS": "2023-12-20T10:47:56.523Z",
     "GUID": "6d206bc8-5981-4b0c-b858-9135d768eea4",
     "isLineageEnabled": false,
-    "lastModifTS": "2024-10-21T14:53:28.527Z",
+    "lastModifTS": "2024-10-21T15:09:38.572Z",
     "persistenceSchemaVersion": "6",
     "isCreatedByPlugin": true,
     "pluginInformation": {
