@@ -88,13 +88,15 @@
                                             "type": "numeric",
                                             "GUID": "ec0bc58d-3e7e-468c-a881-402a0167dfb8",
                                             "minValue": 0,
+                                            "LL_Type": "Greater than or Equal",
+                                            "ge": 0,
                                             "error": {}
                                         }
                                     ],
                                     "childType": "Attribute_ResultValue",
                                     "type": "document",
                                     "GUID": "13a847bf-27e0-4943-bc12-800661049427",
-                                    "description": "Værdi for \"smertescore",
+                                    "description": "Værdi for smertescore",
                                     "required": true,
                                     "foreignCollection": "",
                                     "foreignField": [],
@@ -173,8 +175,8 @@
                                             "GUID": "03ac552a-efe7-4549-a0d5-79c1aaa799ea",
                                             "minValue": 0,
                                             "maxValue": 100,
-                                            "LL_Type": "Greater than or =",
-                                            "UL_Type": "Less than or =",
+                                            "LL_Type": "Greater than or Equal",
+                                            "UL_Type": "Less than or Equal",
                                             "ge": 0,
                                             "le": 100,
                                             "error": {}
@@ -237,7 +239,7 @@
                                             "type": "numeric",
                                             "GUID": "16eac97a-61fd-4415-b974-1efa157ce6a2",
                                             "minValue": 0,
-                                            "LL_Type": "Greater than or =",
+                                            "LL_Type": "Greater than or Equal",
                                             "ge": 0,
                                             "error": {}
                                         }
@@ -299,10 +301,10 @@
                                             "GUID": "0c77a855-e0ab-40ce-bf58-be0f71b2eccc",
                                             "minValue": 3,
                                             "maxValue": 15,
-                                            "LL_Type": "Greater than or =",
-                                            "UL_Type": "Less than or =",
+                                            "UL_Type": "Less than or Equal",
                                             "ge": 3,
                                             "le": 15,
+                                            "LL_Type": "Greater than or Equal",
                                             "error": {}
                                         }
                                     ],
@@ -367,19 +369,23 @@
                                             "enum": [
                                                 {
                                                     "GUID": "a3d491bf-2a99-4965-9ab3-9b79eadaf1b0",
-                                                    "Udfald": "a"
+                                                    "Udfald": "A",
+                                                    "enumDescription": "Alert"
                                                 },
                                                 {
                                                     "GUID": "fdf5fd91-29a9-4986-817e-f56e00827fe9",
-                                                    "Udfald": "v"
+                                                    "Udfald": "V",
+                                                    "enumDescription": "Verbal"
                                                 },
                                                 {
                                                     "GUID": "c019997d-6ba6-40df-b31e-e20826b6cc3c",
-                                                    "Udfald": "p"
+                                                    "Udfald": "P",
+                                                    "enumDescription": "Pain"
                                                 },
                                                 {
                                                     "GUID": "17950440-725c-496e-b148-dc2331ef98bb",
-                                                    "Udfald": "u"
+                                                    "Udfald": "U",
+                                                    "enumDescription": "Unresponsive"
                                                 }
                                             ]
                                         }
@@ -387,7 +393,6 @@
                                     "childType": "Attribute_ResultCode",
                                     "type": "document",
                                     "GUID": "f6f01043-0571-49c8-a362-51b778f752cd",
-                                    "description": "A = Alert, V = Verbal, P = Pain, U = Unresponsive",
                                     "required": true,
                                     "error": {}
                                 },
@@ -417,7 +422,7 @@
                             "childType": "Base_Object",
                             "type": "document",
                             "GUID": "3c727c4c-b0c5-45d5-8c12-9c1c2bd9755f",
-                            "description": "Første AVPU skala (bevidsthed).",
+                            "description": "Første AVPU skala",
                             "ChangeLogID": "f73ca885-c28b-4e1c-8f92-44ce32800812",
                             "realName": "Bevidsthedsskala",
                             "error": {}
@@ -444,23 +449,28 @@
                                             "enum": [
                                                 {
                                                     "GUID": "ea4e55ad-f87d-46b6-b42c-49302fe1e0af",
-                                                    "Udfald": "r"
+                                                    "Udfald": "R",
+                                                    "enumDescription": "Red"
                                                 },
                                                 {
                                                     "GUID": "add02dec-ae1c-4930-95bf-3c0e2c59429b",
-                                                    "Udfald": "o"
+                                                    "Udfald": "O",
+                                                    "enumDescription": "Orange"
                                                 },
                                                 {
                                                     "GUID": "63a46489-3b86-41ff-881d-21d44dab6673",
-                                                    "Udfald": "y"
+                                                    "Udfald": "Y",
+                                                    "enumDescription": "Yellow"
                                                 },
                                                 {
                                                     "GUID": "3812b857-d7f1-4c16-a0d1-ae78701fc8e9",
-                                                    "Udfald": "g"
+                                                    "Udfald": "G",
+                                                    "enumDescription": "Green"
                                                 },
                                                 {
                                                     "GUID": "f7d7f0cc-74ac-467e-8aee-1c01e1f29f83",
-                                                    "Udfald": "b"
+                                                    "Udfald": "B",
+                                                    "enumDescription": "Blue"
                                                 }
                                             ]
                                         }
@@ -468,7 +478,6 @@
                                     "childType": "Attribute_ResultCode",
                                     "type": "document",
                                     "GUID": "b0e22844-38ec-4b27-bf9a-3c3fa815a4e6",
-                                    "description": "R = Red, O = Orange, Y = Yellow, G = Green, B = Blue",
                                     "required": true,
                                     "error": {}
                                 },
@@ -525,11 +534,13 @@
                                             "enum": [
                                                 {
                                                     "GUID": "a53d4409-2d1d-4426-8a53-1c6c8e9f29ed",
-                                                    "Udfald": "y"
+                                                    "Udfald": "Y",
+                                                    "enumDescription": "Yes"
                                                 },
                                                 {
                                                     "GUID": "269590b5-a9aa-46bd-99f0-4a3dbe753707",
-                                                    "Udfald": "n"
+                                                    "Udfald": "N",
+                                                    "enumDescription": "No"
                                                 }
                                             ]
                                         }
@@ -538,7 +549,6 @@
                                     "type": "document",
                                     "GUID": "06b0b5e4-bc34-4245-b998-d89b68205833",
                                     "required": true,
-                                    "description": "Y = Yes, N = No",
                                     "error": {}
                                 },
                                 {
@@ -591,7 +601,7 @@
                                             "type": "numeric",
                                             "GUID": "4f3f8173-cb82-4e1a-b2f6-327a35f72d63",
                                             "minValue": 0,
-                                            "LL_Type": "Greater than or =",
+                                            "LL_Type": "Greater than or Equal",
                                             "ge": 0,
                                             "error": {}
                                         }
@@ -652,7 +662,7 @@
                                             "type": "numeric",
                                             "GUID": "97f739fa-8885-45a6-b392-9bfd02e5633c",
                                             "minValue": 0,
-                                            "LL_Type": "Greater than or =",
+                                            "LL_Type": "Greater than or Equal",
                                             "ge": 0,
                                             "error": {}
                                         }
@@ -714,7 +724,7 @@
                                             "type": "numeric",
                                             "GUID": "c1f8760e-88d8-4092-9ebf-4dd2ca76cff9",
                                             "minValue": 0,
-                                            "LL_Type": "Greater than or =",
+                                            "LL_Type": "Greater than or Equal",
                                             "ge": 0,
                                             "error": {}
                                         }
@@ -791,6 +801,7 @@
                                     "type": "document",
                                     "GUID": "9bfcafc0-bd20-4906-8a4c-952f5a45ef7e",
                                     "required": true,
+                                    "description": "Dato for første afsluttet lægenotat",
                                     "error": {}
                                 },
                                 {
@@ -813,13 +824,14 @@
                                     "type": "document",
                                     "GUID": "7a123b72-d32f-4d5a-851c-0d44187bd0c4",
                                     "required": true,
+                                    "description": "Notattype for første afsluttet lægenotat",
                                     "error": {}
                                 }
                             ],
                             "childType": "Base_Object",
                             "type": "document",
                             "GUID": "fcac5493-930d-430f-b687-a020dec6144d",
-                            "description": "Dato for første afsluttet lægenotat samt notattype",
+                            "description": "Første afsluttet lægenotat",
                             "ChangeLogID": "8158f790-b3f1-4e01-859d-4f2f4abd4fc3",
                             "realName": "Lægenotat",
                             "error": {}
@@ -967,7 +979,7 @@
     "creationTS": "2023-12-20T10:47:56.523Z",
     "GUID": "6d206bc8-5981-4b0c-b858-9135d768eea4",
     "isLineageEnabled": false,
-    "lastModifTS": "2024-11-25T11:41:03.291Z",
+    "lastModifTS": "2024-11-25T13:53:52.606Z",
     "persistenceSchemaVersion": "6",
     "isCreatedByPlugin": true,
     "pluginInformation": {
