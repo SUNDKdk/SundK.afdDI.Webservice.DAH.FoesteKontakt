@@ -850,7 +850,8 @@
             "GUID": "3647786e-2c6e-4b74-914b-66ab1eda6e17",
             "bucketId": "ed6aa961-a083-4e2a-8420-5e8e894ed663",
             "dbNameShort": "DAH",
-            "dbSchema": "FørsteKontakt"
+            "dbSchema": "FørsteKontakt",
+            "docLink": "https://rkkpdk.github.io/RKKP.afdDI.Webservice.DAH.FoesteKontakt/"
         }
     ],
     "buckets": [
@@ -966,7 +967,7 @@
     "creationTS": "2023-12-20T10:47:56.523Z",
     "GUID": "6d206bc8-5981-4b0c-b858-9135d768eea4",
     "isLineageEnabled": false,
-    "lastModifTS": "2024-10-22T08:09:38.161Z",
+    "lastModifTS": "2024-11-25T11:41:03.291Z",
     "persistenceSchemaVersion": "6",
     "isCreatedByPlugin": true,
     "pluginInformation": {
