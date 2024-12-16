@@ -25,13 +25,13 @@
                             </a>
                         </li>
                         <li class="nav-item ms-3">
-                            <a class="btn btn-info btn-sm" href="https://rkkp-wsapi.test.tcs.trifork.cloud/redoc" id="redocs-link">
+                            <a class="btn btn-info btn-sm" href="https://wsapi-test.sundk.dk/redoc" id="redocs-link">
                                 <i class="bi bi-window-sidebar"></i>
                                  ReDocs
                             </a>
                         </li>
                         <li class="nav-item ms-3">
-                            <a class="btn btn-info btn-sm" href="https://rkkp-wsapi.test.tcs.trifork.cloud/docs" id="swagger-link">
+                            <a class="btn btn-info btn-sm" href="https://wsapi-test.sundk.dk/docs" id="swagger-link">
                                 <i class="bi bi-menu-button-wide"></i>
                                  Swagger UI
                             </a>
@@ -185,12 +185,6 @@
                                         <i class="bi bi-filetype-xlsx"></i>
                                          Eksporter (Excel)
                                     </a>
-                                </li>
-                                <li class="nav-item ms-2">
-                                    <button data-bs-toggle='modal' data-bs-target='#jsonModal' class="btn btn-info btn-sm">
-                                        <i class="bi bi-filetype-json"></i>
-                                         JSON Eksempel
-                                    </button>
                                 </li>
                             </ul>
                             <div class="tab-content">
@@ -1268,7 +1262,7 @@
       <ol class="breadcrumb objectHeaderMain objectHeaderColor">
          <i class="bi bi-folder2 me-2"></i>
          <li class="breadcrumb-item">DAH</li>
-         <li class="breadcrumb-item">DAH</li>
+         <li class="breadcrumb-item">Report</li>
          <li class="breadcrumb-item active">Organization</li>
          <li class="mx-2"> - </li>
          <li><strong>Organisation</strong></li>
@@ -1387,7 +1381,7 @@
       <ol class="breadcrumb objectHeaderMain objectHeaderColor">
          <i class="bi bi-folder2 me-2"></i>
          <li class="breadcrumb-item">DAH</li>
-         <li class="breadcrumb-item">DAH</li>
+         <li class="breadcrumb-item">Report</li>
          <li class="breadcrumb-item active">Patient</li>
          <li class="mx-2"> - </li>
          <li><strong>Patient</strong></li>
@@ -1456,173 +1450,6 @@
                 </div>
             </div>
         </main>
-        <div class="modal modal-xl fade" id="jsonModal">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title fs-5" id="jsonModalLabel">API request struktur af DAH v1.0.0</h5>
-                        <button data-bs-dismiss='modal' type="button" class="btn-close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="alert alert-tertiary border">
-                            <p>Dette er et auto-genereret eksempel af JSON strukturen til indberetning af data.</p>
-                            <hr />
-                            <p>For mere information om processen af at indsende data til API'en, se venligst vores tekniske guide                                         på www.rkkp.dk eller besøg <a href='https://rkkp-wsapi.test.tcs.trifork.cloud/docs' target='_blank'>Swagger UI</a>.                                         På <a href='https://rkkp-wsapi.test.tcs.trifork.cloud/docs' target='_blank'>Swagger UI</a> kan du finde en oversigt                                         over API endpoints, samt detaljerede beskrivelser af de tilgængelige API forespørgsler, som kan foretages til hvert endpoint. </p>
-                        </div>
-                        <ul class="nav nav-tabs" id="myTab" style="border-bottom: 0px !important">
-                            <li class="nav-item">
-                                <button class="nav-link active" id="postJSONTab" onclick="jsonTabs(this.id)">POST Example</button>
-                            </li>
-                            <li class="nav-item">
-                                <button class="nav-link" id="putJSONTab" onclick="jsonTabs(this.id)">PUT Example</button>
-                            </li>
-                        </ul>
-                        <div class="tab-content">
-                            <div class="" id="postJSONContent">
-                                <div class="form-floating mb-3">
-                                    <textarea class="form-control textarea-tabs bg-body-tertiary current_json" id="json_post_textarea" style="height: 1000px">{
-    "Report": {
-        "Patient": {
-            "CivilRegistrationNumber": "3112844149"
-        },
-        "Organization": {
-            "OrganizationType": "regionskode",
-            "Identifier": "1234"
-        },
-        "Data": {
-            "Contact": {
-                "NoteType": {
-                    "DateTime": "05-06-2017 02:22:54",
-                    "Note": "TbpRyFXuEpLAcRxTwzYg"
-                }
-            },
-            "Observation": {
-                "AVPUScale": {
-                    "ResultCode": "u",
-                    "DateTime": "24-10-2009 22:20:21"
-                },
-                "GlasgowComaScale": {
-                    "DateTime": "21-07-2010 23:01:22",
-                    "ResultValue": 4
-                },
-                "OxygenDemand": {
-                    "ResultCode": "y",
-                    "DateTime": "24-02-2001 21:59:57"
-                },
-                "OxygenSaturation": {
-                    "DateTime": "03-07-2008 22:07:33",
-                    "ResultValue": 47.00198168034293
-                },
-                "PainEvaluation": {
-                    "ResultCode": "vrs",
-                    "DateTime": "21-10-1999 17:30:29",
-                    "ResultValue": 2.369718145894326,
-                    "Note": "QindqVuymkWeCGentmWD"
-                },
-                "PulseRate": {
-                    "DateTime": "13-02-1995 07:20:57",
-                    "ResultValue": 0
-                },
-                "RespiratoryRate": {
-                    "DateTime": "28-09-2005 01:45:25",
-                    "ResultValue": 0
-                },
-                "SystolicBloodPressure": {
-                    "DateTime": "29-02-2008 00:01:29",
-                    "ResultValue": 0
-                },
-                "Temperature": {
-                    "DateTime": "30-04-2007 06:40:43",
-                    "ResultValue": 2.7432372274889025
-                },
-                "Triage": {
-                    "ResultCode": "r",
-                    "DateTime": "01-06-2012 12:00:30"
-                }
-            }
-        }
-    }
-}</textarea>
-                                    <label _for="floatingTextarea2">JSON POST Structure</label>
-                                </div>
-                            </div>
-                            <div class="hidden" id="putJSONContent">
-                                <div class="form-floating mb-3">
-                                    <textarea class="form-control textarea-tabs bg-body-tertiary" id="json_put_textarea" style="height: 1000px">{
-    "Report": {
-        "Patient": {
-            "CivilRegistrationNumber": "0602362PQ5"
-        },
-        "Organization": {
-            "OrganizationType": "regionskode",
-            "Identifier": "1234"
-        },
-        "Data": {
-            "Contact": {
-                "NoteType": {
-                    "DateTime": "17-01-1999 07:58:41",
-                    "Note": "ZHUeChBiEQoaOlilmzac"
-                }
-            },
-            "Observation": {
-                "AVPUScale": {
-                    "ResultCode": "u",
-                    "DateTime": "22-04-2016 19:08:47"
-                },
-                "GlasgowComaScale": {
-                    "DateTime": "10-06-2012 13:13:58",
-                    "ResultValue": 11
-                },
-                "OxygenDemand": {
-                    "ResultCode": "n",
-                    "DateTime": "06-12-2023 23:05:44"
-                },
-                "OxygenSaturation": {
-                    "DateTime": "10-01-2000 03:04:42",
-                    "ResultValue": 44.396421577096625
-                },
-                "PainEvaluation": {
-                    "ResultCode": "vrs",
-                    "DateTime": "30-12-2003 08:29:29",
-                    "ResultValue": 6.790032131909948,
-                    "Note": "qOzkcvgyIaBGzSQFlOnS"
-                },
-                "PulseRate": {
-                    "DateTime": "05-01-2002 10:06:39",
-                    "ResultValue": 2
-                },
-                "RespiratoryRate": {
-                    "DateTime": "27-10-2009 03:56:32",
-                    "ResultValue": 1
-                },
-                "SystolicBloodPressure": {
-                    "DateTime": "23-10-2017 12:03:13",
-                    "ResultValue": 2
-                },
-                "Temperature": {
-                    "DateTime": "25-04-2006 16:55:55",
-                    "ResultValue": 0.13229359436824595
-                },
-                "Triage": {
-                    "ResultCode": "b",
-                    "DateTime": "12-06-2007 01:26:03"
-                }
-            }
-        }
-    }
-}</textarea>
-                                    <label _for="floatingTextarea2">JSON PUT Structure</label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button data-bs-dismiss='modal' type="button" class="btn btn-secondary btn-sm">Close Window</button>
-                        <button type="button" class="btn btn-primary btn-sm" id="copyJsonButton" onclick="copyText()">Copy JSON</button>
-                    </div>
-                </div>
-            </div>
-        </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" crossorgigin="anonymous"></script>
         <script src="js/rkkp.js" crossorgigin="anonymous"></script>
         <script>
