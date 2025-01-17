@@ -276,7 +276,7 @@
                             "childType": "Base_Object",
                             "type": "document",
                             "GUID": "00c37e7e-242d-4b54-8734-2e768591b38b",
-                            "description": "Blodtryksmåling (systolisk).",
+                            "description": "Første systoliske blodtryksmåling",
                             "ChangeLogID": "c8c3c03f-001b-413e-8e2b-d9040ab5d41f",
                             "realName": "Systoliske blodtryk",
                             "error": {}
@@ -863,7 +863,10 @@
             "bucketId": "ed6aa961-a083-4e2a-8420-5e8e894ed663",
             "dbNameShort": "DAH",
             "dbSchema": "FørsteKontakt",
-            "docLink": "https://rkkpdk.github.io/RKKP.afdDI.Webservice.DAH.FoesteKontakt/"
+            "docLink": "https://rkkpdk.github.io/RKKP.afdDI.Webservice.DAH.FoesteKontakt/",
+            "hackoladeMeta": {
+                "validationErrors": {}
+            }
         }
     ],
     "buckets": [
@@ -881,7 +884,10 @@
             },
             "show": true,
             "isActivated": true,
-            "GUID": "ed6aa961-a083-4e2a-8420-5e8e894ed663"
+            "GUID": "ed6aa961-a083-4e2a-8420-5e8e894ed663",
+            "hackoladeMeta": {
+                "validationErrors": {}
+            }
         }
     ],
     "views": [],
@@ -979,7 +985,7 @@
     "creationTS": "2023-12-20T10:47:56.523Z",
     "GUID": "6d206bc8-5981-4b0c-b858-9135d768eea4",
     "isLineageEnabled": false,
-    "lastModifTS": "2024-11-25T13:53:52.606Z",
+    "lastModifTS": "2025-01-17T10:30:17.083Z",
     "persistenceSchemaVersion": "6",
     "isCreatedByPlugin": true,
     "pluginInformation": {
@@ -988,7 +994,7 @@
         "pluginEngineVersion": "1.0.0"
     },
     "applicationInformation": {
-        "version": "6.10.18"
+        "version": "6.11.9"
     },
     "hackoladeMeta": {},
     "settings": {
