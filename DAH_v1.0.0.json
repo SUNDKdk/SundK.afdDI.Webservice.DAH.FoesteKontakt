@@ -863,10 +863,8 @@
             "bucketId": "ed6aa961-a083-4e2a-8420-5e8e894ed663",
             "dbNameShort": "DAH",
             "dbSchema": "FørsteKontakt",
-            "docLink": "https://rkkpdk.github.io/RKKP.afdDI.Webservice.DAH.FoesteKontakt/",
-            "hackoladeMeta": {
-                "validationErrors": {}
-            }
+            "docLink": "https://sundkdk.github.io/SundK.afdDI.Webservice.DAH.FoesteKontakt/",
+            "hackoladeMeta": {}
         }
     ],
     "buckets": [
@@ -985,7 +983,7 @@
     "creationTS": "2023-12-20T10:47:56.523Z",
     "GUID": "6d206bc8-5981-4b0c-b858-9135d768eea4",
     "isLineageEnabled": false,
-    "lastModifTS": "2025-01-17T10:30:17.083Z",
+    "lastModifTS": "2025-01-28T08:51:27.530Z",
     "persistenceSchemaVersion": "6",
     "isCreatedByPlugin": true,
     "pluginInformation": {
